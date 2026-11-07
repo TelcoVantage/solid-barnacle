@@ -1,9 +1,9 @@
 # Data action: Create Ticket (v9)
 
 Clone **Create Ticket (v8)** and change only the contracts and the response handling.
-The goal: every 2xx response from the ticketing system sets `ticketDone = true` and
-tells the script whether it succeeded, so the script never has to interpret a raw
-return code.
+The goal: every 2xx response from the ticketing system tells the script in one string
+whether it succeeded, so the script's If step compares `ticketOutcome` to `CREATED`
+and never has to interpret a raw return code.
 
 ## Input contract
 
@@ -30,13 +30,10 @@ return code.
 {
   "type": "object",
   "properties": {
-    "ticketDone":       { "type": "boolean" },
-    "ticketCreated":    { "type": "boolean" },
-    "ticketFailed":     { "type": "boolean" },
+    "ticketOutcome":    { "type": "string" },
     "ticketReturnCode": { "type": "integer" },
     "ticketNumber":     { "type": "string" },
-    "ticketMessage":    { "type": "string" },
-    "ticketOutcome":    { "type": "string" }
+    "ticketMessage":    { "type": "string" }
   },
   "additionalProperties": true
 }
@@ -70,37 +67,27 @@ paths to the real payload):
 | `ticketNumber` | `$.ticketNumber` |
 | `message` | `$.message` |
 
-Success template (Velocity). This is where the booleans are derived:
+Success template (Velocity):
 
 ```
 #set($rc = $returnCode)
 #if(!$rc || $rc == "")#set($rc = 1)#end
 {
-  "ticketDone": true,
+  "ticketOutcome": "#if($rc == 0)CREATED#{else}FAILED#end",
   "ticketReturnCode": ${rc},
   "ticketNumber": "${ticketNumber}",
-  "ticketMessage": "${message}",
-  "ticketCreated": #if($rc == 0)true#{else}false#end,
-  "ticketFailed":  #if($rc == 0)false#{else}true#end,
-  "ticketOutcome": "#if($rc == 0)CREATED#{else}FAILED#end"
+  "ticketMessage": "${message}"
 }
 ```
 
-## Empty description guard
+## Business errors
 
-If the ticketing API accepts an empty description, reject it before the call. The
-cleanest place is the API itself. If that is not possible, add a validation check in
-whatever middleware fronts the ticketing system and return:
+If the ticketing API returns 4xx for business errors (account on hold, invalid
+category), the data action fails and sets no outputs, so the agent sees the timeout
+panel rather than the reason. Front such an API with a translation layer that returns
+HTTP 200 and a non-zero `returnCode` with a readable `message`.
 
-```json
-{ "returnCode": 2, "ticketNumber": "", "message": "Description is required" }
-```
+## Empty description
 
-with HTTP 200, so the script gets a red panel rather than a hung request.
-
-## HTTP failures
-
-A 4xx/5xx or a timeout fails the data action and sets no outputs. The script covers
-that with the amber "Creating ticket…" panel and its Cancel button. If the ticketing API
-returns 4xx for business errors, front it with a translation layer that returns 200 and
-a non-zero `returnCode`, or the agent will see the timeout panel instead of the reason.
+The script refuses an empty description before calling this action. Keep a server-side
+check as well: return code 2, message "Description is required".

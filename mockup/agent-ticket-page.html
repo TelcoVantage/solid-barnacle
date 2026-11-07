@@ -157,9 +157,10 @@ textarea{min-height:96px;resize:vertical}
       <div class="note"><b>Customer details card</b>Vertical stack with two-column pairs. Values are read-only text. Email and interaction ID get a <code>Scripter.Copy to Clipboard</code> button so agents stop retyping them into the ticket.</div>
       <div class="note"><b>Create ticket card</b>Two Dropdowns (<code>ticketCategory</code>, <code>ticketPriority</code>) and one Text input with Multiline = Yes and Requires Value = True, bound to <code>ticketDescription</code>. Container Visible is bound to the <code>showForm</code> variable.</div>
       <div class="note"><b>Submit button</b>Click Action runs the custom action “Create Ticket”. Disabled is bound to <code>isSubmitting</code>, so a double-click can’t create two tickets.</div>
-      <div class="note"><b>Three state panels</b>Markdown components, each in its own container with Visible bound to <code>showPending</code>, <code>ticketCreated</code> or <code>ticketFailed</code>. Only one is ever on screen, and the agent is never left staring at a blank <code>{{ticketStatus}}</code>.</div>
+      <div class="note"><b>Three state panels</b>Read-only text in tinted containers, each with Visible bound to <code>showPending</code>, <code>ticketCreated</code> or <code>ticketFailed</code>. Only one is ever on screen, and the agent is never left staring at a blank <code>{{ticketStatus}}</code>.</div>
       <div class="note"><b>Ticket number</b>Comes from the data action output <code>ticketNumber</code>. The current page prints <code>{{InteractionId}}</code>, which is the output variable name, not a ticket number; rename it so the log table and the page agree.</div>
-      <div class="note"><b>Failure path</b>The Create Ticket data action returns <code>ticketFailed</code> and <code>ticketMessage</code> alongside the return code, so a logical failure shows up without the script needing an if/else it doesn’t have. A hung request is covered by the Cancel button, which runs the “Reset Ticket Form” action.</div>
+      <div class="note"><b>Failure path</b>The Create Ticket data action returns <code>ticketOutcome</code> (CREATED or FAILED) and <code>ticketMessage</code> alongside the return code. An If step in the custom action sets the right panel flag, so a logical failure is shown and logged. A hung request is covered by the Cancel button, which runs the “Cancel Ticket” action.</div>
+      <div class="note"><b>Import file</b>All of this is generated into <code>scripts/chat-ticket-script.script</code> by <code>tools/build_script.py</code>, using JSON shapes copied from real Script Editor exports. Put your two data action IDs in, then Admin › Scripts › Import.</div>
     </aside>
   </div>
 
@@ -178,14 +179,14 @@ textarea{min-height:96px;resize:vertical}
   <section class="steps">
     <div class="eyebrow">Custom action · Create Ticket (redesigned)</div>
     <ol>
-      <li><b>Set Variable</b> · <code>isSubmitting = true</code>, <code>showPending = true</code>, <code>ticketCreated = false</code>, <code>ticketFailed = false</code>, <code>ticketDone = false</code>.</li>
-      <li><b>Data Actions.Execute Data Action</b> · Create Ticket (v9). Inputs: fullname, email, location, ticketCategory, ticketPriority, ticketDescription, Scripter.Interaction ID. Outputs: ticketDone, ticketReturnCode, ticketNumber, ticketMessage, ticketCreated, ticketFailed, ticketOutcome.</li>
-      <li><b>Wait Until</b> <code>ticketDone</code> Equals <code>true</code>
-        <div class="indent">3a. <b>Execute Data Action</b> · Insert Data Table Row (Chat Logs) with interaction ID, agent ID, ticketNumber, ticketOutcome, ticketReturnCode, ticketMessage, category, priority. Runs for success and for failure.</div>
-        <div class="indent">3b. <b>Set Variable</b> · <code>showPending = false</code>, <code>isSubmitting = false</code>, <code>showForm = false</code>. The panels then show themselves from <code>ticketCreated</code> / <code>ticketFailed</code>.</div>
-      </li>
+      <li><b>If</b> <code>ticketDescription</code> Not Equal <code>""</code> · otherwise set <code>ticketMessage = "Description is required."</code> and <code>ticketFailed = true</code>, and stop.</li>
+      <li><b>Set Variable</b> · <code>isSubmitting = true</code>, <code>showForm = false</code>, <code>showPending = true</code>, clear <code>ticketCreated</code>, <code>ticketFailed</code>, <code>ticketOutcome</code>.</li>
+      <li><b>Data Actions.Execute Data Action</b> · Create Ticket (v9). Inputs: fullname, email, location, ticketCategory, ticketPriority, ticketDescription, Scripter.Interaction ID, Scripter.Agent ID. Outputs: ticketOutcome, ticketReturnCode, ticketNumber, ticketMessage.</li>
+      <li><b>If</b> <code>ticketOutcome</code> Not Equal <code>"CREATED"</code> · then <code>ticketFailed = true</code>, else <code>ticketCreated = true</code>.</li>
+      <li><b>Execute Data Action</b> · Insert Data Table Row (Chat Logs) with interaction ID, agent ID, ticketNumber, ticketOutcome, ticketReturnCode, ticketMessage, category, priority, customer email. Runs for success and for failure.</li>
+      <li><b>Set Variable</b> · <code>showPending = false</code>, <code>isSubmitting = false</code>. The panels then show themselves from <code>ticketCreated</code> / <code>ticketFailed</code>.</li>
     </ol>
-    <p class="lead" style="margin-top:12px">Waiting on <code>ticketDone</code> rather than on <code>ticketReturnCode = 0</code> is the key change: a non-zero return code no longer leaves the action waiting forever and the agent with no feedback.</p>
+    <p class="lead" style="margin-top:12px">Data action steps in a custom action complete in order, so the Wait Until on <code>ticketReturnCode = 0</code> goes away. An If on the outcome replaces it, and a non-zero return code no longer leaves the agent with no feedback.</p>
   </section>
 </div>
 

@@ -1,0 +1,4734 @@
+{
+  "name": "Chat Ticket Script v2",
+  "startPageId": "c8ecd407-8446-4fa1-87ca-b3c0f71d2469",
+  "pages": [
+    {
+      "id": "c8ecd407-8446-4fa1-87ca-b3c0f71d2469",
+      "name": "Chat Page",
+      "properties": {
+        "onLoadAction": {
+          "typeName": "action",
+          "value": {
+            "actionName": "c5b0171d-80df-46a3-8089-ca73d8cd7a03",
+            "actionArgumentValues": []
+          }
+        },
+        "backgroundColor": {
+          "typeName": "null"
+        }
+      },
+      "dataVersion": 0,
+      "rootContainer": {
+        "type": "verticalStackContainer",
+        "properties": {
+          "margin": {
+            "typeName": "spacing",
+            "value": [
+              5,
+              5,
+              5,
+              5
+            ]
+          },
+          "alignment": {
+            "typeName": "alignment",
+            "value": "start"
+          },
+          "width": {
+            "typeName": "sizing",
+            "value": {
+              "sizeType": "stretch",
+              "size": 100
+            }
+          },
+          "height": {
+            "typeName": "sizing",
+            "value": {
+              "sizeType": "stretch",
+              "size": 100
+            }
+          },
+          "visible": {
+            "typeName": "variable"
+          },
+          "preserveLayoutLocation": {
+            "typeName": "boolean",
+            "value": false
+          },
+          "backgroundColor": {
+            "typeName": "null"
+          },
+          "padding": {
+            "typeName": "spacing",
+            "value": 5
+          },
+          "childArrangement": {
+            "typeName": "childArrangement",
+            "value": "start"
+          },
+          "border": {
+            "typeName": "border",
+            "value": {
+              "width": 0,
+              "style": "solid",
+              "color": "000000"
+            }
+          }
+        },
+        "children": [
+          {
+            "type": "horizontalStackContainer",
+            "properties": {
+              "margin": {
+                "typeName": "spacing",
+                "value": [
+                  5,
+                  5,
+                  5,
+                  5
+                ]
+              },
+              "alignment": {
+                "typeName": "alignment",
+                "value": "start"
+              },
+              "width": {
+                "typeName": "sizing",
+                "value": {
+                  "sizeType": "stretch",
+                  "size": 100
+                }
+              },
+              "height": {
+                "typeName": "sizing",
+                "value": {
+                  "sizeType": "auto"
+                }
+              },
+              "visible": {
+                "typeName": "variable"
+              },
+              "preserveLayoutLocation": {
+                "typeName": "boolean",
+                "value": false
+              },
+              "backgroundColor": {
+                "typeName": "color",
+                "value": "#e8f0fc"
+              },
+              "padding": {
+                "typeName": "spacing",
+                "value": 10
+              },
+              "childArrangement": {
+                "typeName": "childArrangement",
+                "value": "start"
+              },
+              "border": {
+                "typeName": "border",
+                "value": {
+                  "width": 0,
+                  "style": "solid",
+                  "color": "000000"
+                }
+              }
+            },
+            "children": [
+              {
+                "type": "text",
+                "properties": {
+                  "margin": {
+                    "typeName": "spacing",
+                    "value": [
+                      5,
+                      5,
+                      5,
+                      5
+                    ]
+                  },
+                  "alignment": {
+                    "typeName": "alignment",
+                    "value": "start"
+                  },
+                  "width": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "height": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "visible": {
+                    "typeName": "variable"
+                  },
+                  "preserveLayoutLocation": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "text": {
+                    "typeName": "interpolatedText",
+                    "value": "{{0e54e49a-862e-4dcd-8bf4-be1b34df35e4}}"
+                  },
+                  "bold": {
+                    "typeName": "boolean",
+                    "value": true
+                  },
+                  "italic": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "underline": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "font": {
+                    "typeName": "font",
+                    "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                  },
+                  "fontSize": {
+                    "typeName": "integer",
+                    "value": 16
+                  },
+                  "justification": {
+                    "typeName": "text",
+                    "value": "left"
+                  },
+                  "backgroundColor": {
+                    "typeName": "null"
+                  },
+                  "textColor": {
+                    "typeName": "null"
+                  },
+                  "padding": {
+                    "typeName": "spacing",
+                    "value": 0
+                  }
+                }
+              },
+              {
+                "type": "text",
+                "properties": {
+                  "margin": {
+                    "typeName": "spacing",
+                    "value": [
+                      5,
+                      5,
+                      5,
+                      5
+                    ]
+                  },
+                  "alignment": {
+                    "typeName": "alignment",
+                    "value": "start"
+                  },
+                  "width": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "height": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "visible": {
+                    "typeName": "variable"
+                  },
+                  "preserveLayoutLocation": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "text": {
+                    "typeName": "interpolatedText",
+                    "value": "Messaging  ·  {{scripter.queueName}}"
+                  },
+                  "bold": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "italic": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "underline": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "font": {
+                    "typeName": "font",
+                    "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                  },
+                  "fontSize": {
+                    "typeName": "integer",
+                    "value": 11
+                  },
+                  "justification": {
+                    "typeName": "text",
+                    "value": "left"
+                  },
+                  "backgroundColor": {
+                    "typeName": "null"
+                  },
+                  "textColor": {
+                    "typeName": "color",
+                    "value": "#5b6778"
+                  },
+                  "padding": {
+                    "typeName": "spacing",
+                    "value": 0
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "verticalStackContainer",
+            "properties": {
+              "margin": {
+                "typeName": "spacing",
+                "value": [
+                  5,
+                  5,
+                  5,
+                  5
+                ]
+              },
+              "alignment": {
+                "typeName": "alignment",
+                "value": "start"
+              },
+              "width": {
+                "typeName": "sizing",
+                "value": {
+                  "sizeType": "stretch",
+                  "size": 100
+                }
+              },
+              "height": {
+                "typeName": "sizing",
+                "value": {
+                  "sizeType": "auto"
+                }
+              },
+              "visible": {
+                "typeName": "variable"
+              },
+              "preserveLayoutLocation": {
+                "typeName": "boolean",
+                "value": false
+              },
+              "backgroundColor": {
+                "typeName": "null"
+              },
+              "padding": {
+                "typeName": "spacing",
+                "value": 10
+              },
+              "childArrangement": {
+                "typeName": "childArrangement",
+                "value": "start"
+              },
+              "border": {
+                "typeName": "border",
+                "value": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "#d9dfe7"
+                }
+              }
+            },
+            "children": [
+              {
+                "type": "text",
+                "properties": {
+                  "margin": {
+                    "typeName": "spacing",
+                    "value": [
+                      5,
+                      5,
+                      5,
+                      5
+                    ]
+                  },
+                  "alignment": {
+                    "typeName": "alignment",
+                    "value": "start"
+                  },
+                  "width": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "height": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "visible": {
+                    "typeName": "variable"
+                  },
+                  "preserveLayoutLocation": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "text": {
+                    "typeName": "interpolatedText",
+                    "value": "Customer details"
+                  },
+                  "bold": {
+                    "typeName": "boolean",
+                    "value": true
+                  },
+                  "italic": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "underline": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "font": {
+                    "typeName": "font",
+                    "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                  },
+                  "fontSize": {
+                    "typeName": "integer",
+                    "value": 13
+                  },
+                  "justification": {
+                    "typeName": "text",
+                    "value": "left"
+                  },
+                  "backgroundColor": {
+                    "typeName": "null"
+                  },
+                  "textColor": {
+                    "typeName": "null"
+                  },
+                  "padding": {
+                    "typeName": "spacing",
+                    "value": 0
+                  }
+                }
+              },
+              {
+                "type": "horizontalStackContainer",
+                "properties": {
+                  "margin": {
+                    "typeName": "spacing",
+                    "value": 0
+                  },
+                  "alignment": {
+                    "typeName": "alignment",
+                    "value": "start"
+                  },
+                  "width": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "stretch",
+                      "size": 100
+                    }
+                  },
+                  "height": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "visible": {
+                    "typeName": "variable"
+                  },
+                  "preserveLayoutLocation": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "backgroundColor": {
+                    "typeName": "null"
+                  },
+                  "padding": {
+                    "typeName": "spacing",
+                    "value": 0
+                  },
+                  "childArrangement": {
+                    "typeName": "childArrangement",
+                    "value": "start"
+                  },
+                  "border": {
+                    "typeName": "border",
+                    "value": {
+                      "width": 0,
+                      "style": "solid",
+                      "color": "000000"
+                    }
+                  }
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "properties": {
+                      "margin": {
+                        "typeName": "spacing",
+                        "value": [
+                          5,
+                          5,
+                          5,
+                          5
+                        ]
+                      },
+                      "alignment": {
+                        "typeName": "alignment",
+                        "value": "start"
+                      },
+                      "width": {
+                        "typeName": "sizing",
+                        "value": {
+                          "sizeType": "pixels",
+                          "size": 120
+                        }
+                      },
+                      "height": {
+                        "typeName": "sizing",
+                        "value": {
+                          "sizeType": "auto"
+                        }
+                      },
+                      "visible": {
+                        "typeName": "variable"
+                      },
+                      "preserveLayoutLocation": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "text": {
+                        "typeName": "interpolatedText",
+                        "value": "Full name"
+                      },
+                      "bold": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "italic": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "underline": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "font": {
+                        "typeName": "font",
+                        "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                      },
+                      "fontSize": {
+                        "typeName": "integer",
+                        "value": 12
+                      },
+                      "justification": {
+                        "typeName": "text",
+                        "value": "left"
+                      },
+                      "backgroundColor": {
+                        "typeName": "null"
+                      },
+                      "textColor": {
+                        "typeName": "color",
+                        "value": "#5b6778"
+                      },
+                      "padding": {
+                        "typeName": "spacing",
+                        "value": 0
+                      }
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "properties": {
+                      "margin": {
+                        "typeName": "spacing",
+                        "value": [
+                          5,
+                          5,
+                          5,
+                          5
+                        ]
+                      },
+                      "alignment": {
+                        "typeName": "alignment",
+                        "value": "start"
+                      },
+                      "width": {
+                        "typeName": "sizing",
+                        "value": {
+                          "sizeType": "auto"
+                        }
+                      },
+                      "height": {
+                        "typeName": "sizing",
+                        "value": {
+                          "sizeType": "auto"
+                        }
+                      },
+                      "visible": {
+                        "typeName": "variable"
+                      },
+                      "preserveLayoutLocation": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "text": {
+                        "typeName": "interpolatedText",
+                        "value": "{{0e54e49a-862e-4dcd-8bf4-be1b34df35e4}}"
+                      },
+                      "bold": {
+                        "typeName": "boolean",
+                        "value": true
+                      },
+                      "italic": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "underline": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "font": {
+                        "typeName": "font",
+                        "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                      },
+                      "fontSize": {
+                        "typeName": "integer",
+                        "value": 12
+                      },
+                      "justification": {
+                        "typeName": "text",
+                        "value": "left"
+                      },
+                      "backgroundColor": {
+                        "typeName": "null"
+                      },
+                      "textColor": {
+                        "typeName": "null"
+                      },
+                      "padding": {
+                        "typeName": "spacing",
+                        "value": 0
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "horizontalStackContainer",
+                "properties": {
+                  "margin": {
+                    "typeName": "spacing",
+                    "value": 0
+                  },
+                  "alignment": {
+                    "typeName": "alignment",
+                    "value": "start"
+                  },
+                  "width": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "stretch",
+                      "size": 100
+                    }
+                  },
+                  "height": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "visible": {
+                    "typeName": "variable"
+                  },
+                  "preserveLayoutLocation": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "backgroundColor": {
+                    "typeName": "null"
+                  },
+                  "padding": {
+                    "typeName": "spacing",
+                    "value": 0
+                  },
+                  "childArrangement": {
+                    "typeName": "childArrangement",
+                    "value": "start"
+                  },
+                  "border": {
+                    "typeName": "border",
+                    "value": {
+                      "width": 0,
+                      "style": "solid",
+                      "color": "000000"
+                    }
+                  }
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "properties": {
+                      "margin": {
+                        "typeName": "spacing",
+                        "value": [
+                          5,
+                          5,
+                          5,
+                          5
+                        ]
+                      },
+                      "alignment": {
+                        "typeName": "alignment",
+                        "value": "start"
+                      },
+                      "width": {
+                        "typeName": "sizing",
+                        "value": {
+                          "sizeType": "pixels",
+                          "size": 120
+                        }
+                      },
+                      "height": {
+                        "typeName": "sizing",
+                        "value": {
+                          "sizeType": "auto"
+                        }
+                      },
+                      "visible": {
+                        "typeName": "variable"
+                      },
+                      "preserveLayoutLocation": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "text": {
+                        "typeName": "interpolatedText",
+                        "value": "Email"
+                      },
+                      "bold": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "italic": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "underline": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "font": {
+                        "typeName": "font",
+                        "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                      },
+                      "fontSize": {
+                        "typeName": "integer",
+                        "value": 12
+                      },
+                      "justification": {
+                        "typeName": "text",
+                        "value": "left"
+                      },
+                      "backgroundColor": {
+                        "typeName": "null"
+                      },
+                      "textColor": {
+                        "typeName": "color",
+                        "value": "#5b6778"
+                      },
+                      "padding": {
+                        "typeName": "spacing",
+                        "value": 0
+                      }
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "properties": {
+                      "margin": {
+                        "typeName": "spacing",
+                        "value": [
+                          5,
+                          5,
+                          5,
+                          5
+                        ]
+                      },
+                      "alignment": {
+                        "typeName": "alignment",
+                        "value": "start"
+                      },
+                      "width": {
+                        "typeName": "sizing",
+                        "value": {
+                          "sizeType": "auto"
+                        }
+                      },
+                      "height": {
+                        "typeName": "sizing",
+                        "value": {
+                          "sizeType": "auto"
+                        }
+                      },
+                      "visible": {
+                        "typeName": "variable"
+                      },
+                      "preserveLayoutLocation": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "text": {
+                        "typeName": "interpolatedText",
+                        "value": "{{6cfd5e60-ffe8-4a7b-8535-db01a037774a}}"
+                      },
+                      "bold": {
+                        "typeName": "boolean",
+                        "value": true
+                      },
+                      "italic": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "underline": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "font": {
+                        "typeName": "font",
+                        "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                      },
+                      "fontSize": {
+                        "typeName": "integer",
+                        "value": 12
+                      },
+                      "justification": {
+                        "typeName": "text",
+                        "value": "left"
+                      },
+                      "backgroundColor": {
+                        "typeName": "null"
+                      },
+                      "textColor": {
+                        "typeName": "null"
+                      },
+                      "padding": {
+                        "typeName": "spacing",
+                        "value": 0
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "horizontalStackContainer",
+                "properties": {
+                  "margin": {
+                    "typeName": "spacing",
+                    "value": 0
+                  },
+                  "alignment": {
+                    "typeName": "alignment",
+                    "value": "start"
+                  },
+                  "width": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "stretch",
+                      "size": 100
+                    }
+                  },
+                  "height": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "visible": {
+                    "typeName": "variable"
+                  },
+                  "preserveLayoutLocation": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "backgroundColor": {
+                    "typeName": "null"
+                  },
+                  "padding": {
+                    "typeName": "spacing",
+                    "value": 0
+                  },
+                  "childArrangement": {
+                    "typeName": "childArrangement",
+                    "value": "start"
+                  },
+                  "border": {
+                    "typeName": "border",
+                    "value": {
+                      "width": 0,
+                      "style": "solid",
+                      "color": "000000"
+                    }
+                  }
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "properties": {
+                      "margin": {
+                        "typeName": "spacing",
+                        "value": [
+                          5,
+                          5,
+                          5,
+                          5
+                        ]
+                      },
+                      "alignment": {
+                        "typeName": "alignment",
+                        "value": "start"
+                      },
+                      "width": {
+                        "typeName": "sizing",
+                        "value": {
+                          "sizeType": "pixels",
+                          "size": 120
+                        }
+                      },
+                      "height": {
+                        "typeName": "sizing",
+                        "value": {
+                          "sizeType": "auto"
+                        }
+                      },
+                      "visible": {
+                        "typeName": "variable"
+                      },
+                      "preserveLayoutLocation": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "text": {
+                        "typeName": "interpolatedText",
+                        "value": "Location"
+                      },
+                      "bold": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "italic": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "underline": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "font": {
+                        "typeName": "font",
+                        "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                      },
+                      "fontSize": {
+                        "typeName": "integer",
+                        "value": 12
+                      },
+                      "justification": {
+                        "typeName": "text",
+                        "value": "left"
+                      },
+                      "backgroundColor": {
+                        "typeName": "null"
+                      },
+                      "textColor": {
+                        "typeName": "color",
+                        "value": "#5b6778"
+                      },
+                      "padding": {
+                        "typeName": "spacing",
+                        "value": 0
+                      }
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "properties": {
+                      "margin": {
+                        "typeName": "spacing",
+                        "value": [
+                          5,
+                          5,
+                          5,
+                          5
+                        ]
+                      },
+                      "alignment": {
+                        "typeName": "alignment",
+                        "value": "start"
+                      },
+                      "width": {
+                        "typeName": "sizing",
+                        "value": {
+                          "sizeType": "auto"
+                        }
+                      },
+                      "height": {
+                        "typeName": "sizing",
+                        "value": {
+                          "sizeType": "auto"
+                        }
+                      },
+                      "visible": {
+                        "typeName": "variable"
+                      },
+                      "preserveLayoutLocation": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "text": {
+                        "typeName": "interpolatedText",
+                        "value": "{{15387efb-2f4e-4c96-b039-cb99daa157f3}}"
+                      },
+                      "bold": {
+                        "typeName": "boolean",
+                        "value": true
+                      },
+                      "italic": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "underline": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "font": {
+                        "typeName": "font",
+                        "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                      },
+                      "fontSize": {
+                        "typeName": "integer",
+                        "value": 12
+                      },
+                      "justification": {
+                        "typeName": "text",
+                        "value": "left"
+                      },
+                      "backgroundColor": {
+                        "typeName": "null"
+                      },
+                      "textColor": {
+                        "typeName": "null"
+                      },
+                      "padding": {
+                        "typeName": "spacing",
+                        "value": 0
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "horizontalStackContainer",
+                "properties": {
+                  "margin": {
+                    "typeName": "spacing",
+                    "value": 0
+                  },
+                  "alignment": {
+                    "typeName": "alignment",
+                    "value": "start"
+                  },
+                  "width": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "stretch",
+                      "size": 100
+                    }
+                  },
+                  "height": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "visible": {
+                    "typeName": "variable"
+                  },
+                  "preserveLayoutLocation": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "backgroundColor": {
+                    "typeName": "null"
+                  },
+                  "padding": {
+                    "typeName": "spacing",
+                    "value": 0
+                  },
+                  "childArrangement": {
+                    "typeName": "childArrangement",
+                    "value": "start"
+                  },
+                  "border": {
+                    "typeName": "border",
+                    "value": {
+                      "width": 0,
+                      "style": "solid",
+                      "color": "000000"
+                    }
+                  }
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "properties": {
+                      "margin": {
+                        "typeName": "spacing",
+                        "value": [
+                          5,
+                          5,
+                          5,
+                          5
+                        ]
+                      },
+                      "alignment": {
+                        "typeName": "alignment",
+                        "value": "start"
+                      },
+                      "width": {
+                        "typeName": "sizing",
+                        "value": {
+                          "sizeType": "pixels",
+                          "size": 120
+                        }
+                      },
+                      "height": {
+                        "typeName": "sizing",
+                        "value": {
+                          "sizeType": "auto"
+                        }
+                      },
+                      "visible": {
+                        "typeName": "variable"
+                      },
+                      "preserveLayoutLocation": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "text": {
+                        "typeName": "interpolatedText",
+                        "value": "Interaction"
+                      },
+                      "bold": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "italic": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "underline": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "font": {
+                        "typeName": "font",
+                        "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                      },
+                      "fontSize": {
+                        "typeName": "integer",
+                        "value": 12
+                      },
+                      "justification": {
+                        "typeName": "text",
+                        "value": "left"
+                      },
+                      "backgroundColor": {
+                        "typeName": "null"
+                      },
+                      "textColor": {
+                        "typeName": "color",
+                        "value": "#5b6778"
+                      },
+                      "padding": {
+                        "typeName": "spacing",
+                        "value": 0
+                      }
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "properties": {
+                      "margin": {
+                        "typeName": "spacing",
+                        "value": [
+                          5,
+                          5,
+                          5,
+                          5
+                        ]
+                      },
+                      "alignment": {
+                        "typeName": "alignment",
+                        "value": "start"
+                      },
+                      "width": {
+                        "typeName": "sizing",
+                        "value": {
+                          "sizeType": "auto"
+                        }
+                      },
+                      "height": {
+                        "typeName": "sizing",
+                        "value": {
+                          "sizeType": "auto"
+                        }
+                      },
+                      "visible": {
+                        "typeName": "variable"
+                      },
+                      "preserveLayoutLocation": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "text": {
+                        "typeName": "interpolatedText",
+                        "value": "{{scripter.interactionId}}"
+                      },
+                      "bold": {
+                        "typeName": "boolean",
+                        "value": true
+                      },
+                      "italic": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "underline": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "font": {
+                        "typeName": "font",
+                        "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                      },
+                      "fontSize": {
+                        "typeName": "integer",
+                        "value": 12
+                      },
+                      "justification": {
+                        "typeName": "text",
+                        "value": "left"
+                      },
+                      "backgroundColor": {
+                        "typeName": "null"
+                      },
+                      "textColor": {
+                        "typeName": "null"
+                      },
+                      "padding": {
+                        "typeName": "spacing",
+                        "value": 0
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "verticalStackContainer",
+            "properties": {
+              "margin": {
+                "typeName": "spacing",
+                "value": [
+                  5,
+                  5,
+                  5,
+                  5
+                ]
+              },
+              "alignment": {
+                "typeName": "alignment",
+                "value": "start"
+              },
+              "width": {
+                "typeName": "sizing",
+                "value": {
+                  "sizeType": "stretch",
+                  "size": 100
+                }
+              },
+              "height": {
+                "typeName": "sizing",
+                "value": {
+                  "sizeType": "auto"
+                }
+              },
+              "visible": {
+                "typeName": "variable",
+                "value": "992c260b-61f7-44c3-90ea-3150e6a47403"
+              },
+              "preserveLayoutLocation": {
+                "typeName": "boolean",
+                "value": false
+              },
+              "backgroundColor": {
+                "typeName": "null"
+              },
+              "padding": {
+                "typeName": "spacing",
+                "value": 10
+              },
+              "childArrangement": {
+                "typeName": "childArrangement",
+                "value": "start"
+              },
+              "border": {
+                "typeName": "border",
+                "value": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "#d9dfe7"
+                }
+              }
+            },
+            "children": [
+              {
+                "type": "text",
+                "properties": {
+                  "margin": {
+                    "typeName": "spacing",
+                    "value": [
+                      5,
+                      5,
+                      5,
+                      5
+                    ]
+                  },
+                  "alignment": {
+                    "typeName": "alignment",
+                    "value": "start"
+                  },
+                  "width": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "height": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "visible": {
+                    "typeName": "variable"
+                  },
+                  "preserveLayoutLocation": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "text": {
+                    "typeName": "interpolatedText",
+                    "value": "Create ticket"
+                  },
+                  "bold": {
+                    "typeName": "boolean",
+                    "value": true
+                  },
+                  "italic": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "underline": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "font": {
+                    "typeName": "font",
+                    "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                  },
+                  "fontSize": {
+                    "typeName": "integer",
+                    "value": 13
+                  },
+                  "justification": {
+                    "typeName": "text",
+                    "value": "left"
+                  },
+                  "backgroundColor": {
+                    "typeName": "null"
+                  },
+                  "textColor": {
+                    "typeName": "null"
+                  },
+                  "padding": {
+                    "typeName": "spacing",
+                    "value": 0
+                  }
+                }
+              },
+              {
+                "type": "horizontalStackContainer",
+                "properties": {
+                  "margin": {
+                    "typeName": "spacing",
+                    "value": 0
+                  },
+                  "alignment": {
+                    "typeName": "alignment",
+                    "value": "start"
+                  },
+                  "width": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "stretch",
+                      "size": 100
+                    }
+                  },
+                  "height": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "visible": {
+                    "typeName": "variable"
+                  },
+                  "preserveLayoutLocation": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "backgroundColor": {
+                    "typeName": "null"
+                  },
+                  "padding": {
+                    "typeName": "spacing",
+                    "value": 0
+                  },
+                  "childArrangement": {
+                    "typeName": "childArrangement",
+                    "value": "start"
+                  },
+                  "border": {
+                    "typeName": "border",
+                    "value": {
+                      "width": 0,
+                      "style": "solid",
+                      "color": "000000"
+                    }
+                  }
+                },
+                "children": [
+                  {
+                    "type": "verticalStackContainer",
+                    "properties": {
+                      "margin": {
+                        "typeName": "spacing",
+                        "value": 0
+                      },
+                      "alignment": {
+                        "typeName": "alignment",
+                        "value": "start"
+                      },
+                      "width": {
+                        "typeName": "sizing",
+                        "value": {
+                          "sizeType": "auto"
+                        }
+                      },
+                      "height": {
+                        "typeName": "sizing",
+                        "value": {
+                          "sizeType": "auto"
+                        }
+                      },
+                      "visible": {
+                        "typeName": "variable"
+                      },
+                      "preserveLayoutLocation": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "backgroundColor": {
+                        "typeName": "null"
+                      },
+                      "padding": {
+                        "typeName": "spacing",
+                        "value": 0
+                      },
+                      "childArrangement": {
+                        "typeName": "childArrangement",
+                        "value": "start"
+                      },
+                      "border": {
+                        "typeName": "border",
+                        "value": {
+                          "width": 0,
+                          "style": "solid",
+                          "color": "000000"
+                        }
+                      }
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "properties": {
+                          "margin": {
+                            "typeName": "spacing",
+                            "value": [
+                              5,
+                              5,
+                              5,
+                              5
+                            ]
+                          },
+                          "alignment": {
+                            "typeName": "alignment",
+                            "value": "start"
+                          },
+                          "width": {
+                            "typeName": "sizing",
+                            "value": {
+                              "sizeType": "auto"
+                            }
+                          },
+                          "height": {
+                            "typeName": "sizing",
+                            "value": {
+                              "sizeType": "auto"
+                            }
+                          },
+                          "visible": {
+                            "typeName": "variable"
+                          },
+                          "preserveLayoutLocation": {
+                            "typeName": "boolean",
+                            "value": false
+                          },
+                          "text": {
+                            "typeName": "interpolatedText",
+                            "value": "Category"
+                          },
+                          "bold": {
+                            "typeName": "boolean",
+                            "value": false
+                          },
+                          "italic": {
+                            "typeName": "boolean",
+                            "value": false
+                          },
+                          "underline": {
+                            "typeName": "boolean",
+                            "value": false
+                          },
+                          "font": {
+                            "typeName": "font",
+                            "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                          },
+                          "fontSize": {
+                            "typeName": "integer",
+                            "value": 11
+                          },
+                          "justification": {
+                            "typeName": "text",
+                            "value": "left"
+                          },
+                          "backgroundColor": {
+                            "typeName": "null"
+                          },
+                          "textColor": {
+                            "typeName": "color",
+                            "value": "#5b6778"
+                          },
+                          "padding": {
+                            "typeName": "spacing",
+                            "value": 0
+                          }
+                        }
+                      },
+                      {
+                        "type": "dropdown",
+                        "properties": {
+                          "margin": {
+                            "typeName": "spacing",
+                            "value": [
+                              5,
+                              5,
+                              5,
+                              5
+                            ]
+                          },
+                          "alignment": {
+                            "typeName": "alignment",
+                            "value": "start"
+                          },
+                          "width": {
+                            "typeName": "sizing",
+                            "value": {
+                              "sizeType": "pixels",
+                              "size": 220
+                            }
+                          },
+                          "height": {
+                            "typeName": "sizing",
+                            "value": {
+                              "sizeType": "auto"
+                            }
+                          },
+                          "visible": {
+                            "typeName": "variable"
+                          },
+                          "preserveLayoutLocation": {
+                            "typeName": "boolean",
+                            "value": false
+                          },
+                          "placeholderText": {
+                            "typeName": "interpolatedText",
+                            "value": ""
+                          },
+                          "options": {
+                            "typeName": "list",
+                            "value": [
+                              [
+                                {
+                                  "typeName": "interpolatedText",
+                                  "value": "Billing"
+                                },
+                                {
+                                  "typeName": "interpolatedText",
+                                  "value": "Billing"
+                                }
+                              ],
+                              [
+                                {
+                                  "typeName": "interpolatedText",
+                                  "value": "Technical fault"
+                                },
+                                {
+                                  "typeName": "interpolatedText",
+                                  "value": "Technical fault"
+                                }
+                              ],
+                              [
+                                {
+                                  "typeName": "interpolatedText",
+                                  "value": "Account"
+                                },
+                                {
+                                  "typeName": "interpolatedText",
+                                  "value": "Account"
+                                }
+                              ],
+                              [
+                                {
+                                  "typeName": "interpolatedText",
+                                  "value": "Other"
+                                },
+                                {
+                                  "typeName": "interpolatedText",
+                                  "value": "Other"
+                                }
+                              ]
+                            ]
+                          },
+                          "doesRequireValue": {
+                            "typeName": "boolean",
+                            "value": true
+                          },
+                          "value": {
+                            "typeName": "variable",
+                            "value": "876329cd-fd25-4b62-b315-79345281542e"
+                          },
+                          "changeAction": {
+                            "typeName": "action",
+                            "value": {}
+                          },
+                          "disabled": {
+                            "typeName": "variable",
+                            "value": "1b0ec71c-3e75-4fcb-8463-1090912c0793"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "verticalStackContainer",
+                    "properties": {
+                      "margin": {
+                        "typeName": "spacing",
+                        "value": 0
+                      },
+                      "alignment": {
+                        "typeName": "alignment",
+                        "value": "start"
+                      },
+                      "width": {
+                        "typeName": "sizing",
+                        "value": {
+                          "sizeType": "auto"
+                        }
+                      },
+                      "height": {
+                        "typeName": "sizing",
+                        "value": {
+                          "sizeType": "auto"
+                        }
+                      },
+                      "visible": {
+                        "typeName": "variable"
+                      },
+                      "preserveLayoutLocation": {
+                        "typeName": "boolean",
+                        "value": false
+                      },
+                      "backgroundColor": {
+                        "typeName": "null"
+                      },
+                      "padding": {
+                        "typeName": "spacing",
+                        "value": 0
+                      },
+                      "childArrangement": {
+                        "typeName": "childArrangement",
+                        "value": "start"
+                      },
+                      "border": {
+                        "typeName": "border",
+                        "value": {
+                          "width": 0,
+                          "style": "solid",
+                          "color": "000000"
+                        }
+                      }
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "properties": {
+                          "margin": {
+                            "typeName": "spacing",
+                            "value": [
+                              5,
+                              5,
+                              5,
+                              5
+                            ]
+                          },
+                          "alignment": {
+                            "typeName": "alignment",
+                            "value": "start"
+                          },
+                          "width": {
+                            "typeName": "sizing",
+                            "value": {
+                              "sizeType": "auto"
+                            }
+                          },
+                          "height": {
+                            "typeName": "sizing",
+                            "value": {
+                              "sizeType": "auto"
+                            }
+                          },
+                          "visible": {
+                            "typeName": "variable"
+                          },
+                          "preserveLayoutLocation": {
+                            "typeName": "boolean",
+                            "value": false
+                          },
+                          "text": {
+                            "typeName": "interpolatedText",
+                            "value": "Priority"
+                          },
+                          "bold": {
+                            "typeName": "boolean",
+                            "value": false
+                          },
+                          "italic": {
+                            "typeName": "boolean",
+                            "value": false
+                          },
+                          "underline": {
+                            "typeName": "boolean",
+                            "value": false
+                          },
+                          "font": {
+                            "typeName": "font",
+                            "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                          },
+                          "fontSize": {
+                            "typeName": "integer",
+                            "value": 11
+                          },
+                          "justification": {
+                            "typeName": "text",
+                            "value": "left"
+                          },
+                          "backgroundColor": {
+                            "typeName": "null"
+                          },
+                          "textColor": {
+                            "typeName": "color",
+                            "value": "#5b6778"
+                          },
+                          "padding": {
+                            "typeName": "spacing",
+                            "value": 0
+                          }
+                        }
+                      },
+                      {
+                        "type": "dropdown",
+                        "properties": {
+                          "margin": {
+                            "typeName": "spacing",
+                            "value": [
+                              5,
+                              5,
+                              5,
+                              5
+                            ]
+                          },
+                          "alignment": {
+                            "typeName": "alignment",
+                            "value": "start"
+                          },
+                          "width": {
+                            "typeName": "sizing",
+                            "value": {
+                              "sizeType": "pixels",
+                              "size": 160
+                            }
+                          },
+                          "height": {
+                            "typeName": "sizing",
+                            "value": {
+                              "sizeType": "auto"
+                            }
+                          },
+                          "visible": {
+                            "typeName": "variable"
+                          },
+                          "preserveLayoutLocation": {
+                            "typeName": "boolean",
+                            "value": false
+                          },
+                          "placeholderText": {
+                            "typeName": "interpolatedText",
+                            "value": ""
+                          },
+                          "options": {
+                            "typeName": "list",
+                            "value": [
+                              [
+                                {
+                                  "typeName": "interpolatedText",
+                                  "value": "Low"
+                                },
+                                {
+                                  "typeName": "interpolatedText",
+                                  "value": "Low"
+                                }
+                              ],
+                              [
+                                {
+                                  "typeName": "interpolatedText",
+                                  "value": "Normal"
+                                },
+                                {
+                                  "typeName": "interpolatedText",
+                                  "value": "Normal"
+                                }
+                              ],
+                              [
+                                {
+                                  "typeName": "interpolatedText",
+                                  "value": "High"
+                                },
+                                {
+                                  "typeName": "interpolatedText",
+                                  "value": "High"
+                                }
+                              ]
+                            ]
+                          },
+                          "doesRequireValue": {
+                            "typeName": "boolean",
+                            "value": true
+                          },
+                          "value": {
+                            "typeName": "variable",
+                            "value": "0a6ecd78-74ae-4b44-a451-4118cf8c9d7b"
+                          },
+                          "changeAction": {
+                            "typeName": "action",
+                            "value": {}
+                          },
+                          "disabled": {
+                            "typeName": "variable",
+                            "value": "1b0ec71c-3e75-4fcb-8463-1090912c0793"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "properties": {
+                  "margin": {
+                    "typeName": "spacing",
+                    "value": [
+                      5,
+                      5,
+                      5,
+                      5
+                    ]
+                  },
+                  "alignment": {
+                    "typeName": "alignment",
+                    "value": "start"
+                  },
+                  "width": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "height": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "visible": {
+                    "typeName": "variable"
+                  },
+                  "preserveLayoutLocation": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "text": {
+                    "typeName": "interpolatedText",
+                    "value": "Description"
+                  },
+                  "bold": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "italic": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "underline": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "font": {
+                    "typeName": "font",
+                    "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                  },
+                  "fontSize": {
+                    "typeName": "integer",
+                    "value": 11
+                  },
+                  "justification": {
+                    "typeName": "text",
+                    "value": "left"
+                  },
+                  "backgroundColor": {
+                    "typeName": "null"
+                  },
+                  "textColor": {
+                    "typeName": "color",
+                    "value": "#5b6778"
+                  },
+                  "padding": {
+                    "typeName": "spacing",
+                    "value": 0
+                  }
+                }
+              },
+              {
+                "type": "input",
+                "properties": {
+                  "margin": {
+                    "typeName": "spacing",
+                    "value": [
+                      5,
+                      5,
+                      5,
+                      5
+                    ]
+                  },
+                  "alignment": {
+                    "typeName": "alignment",
+                    "value": "start"
+                  },
+                  "width": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "stretch",
+                      "size": 100
+                    }
+                  },
+                  "height": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "pixels",
+                      "size": 120
+                    }
+                  },
+                  "visible": {
+                    "typeName": "variable"
+                  },
+                  "preserveLayoutLocation": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "placeholderText": {
+                    "typeName": "interpolatedText",
+                    "value": "What the customer reported, what you checked, what they need next."
+                  },
+                  "validation": {
+                    "typeName": "inputValidation"
+                  },
+                  "doesRequireValue": {
+                    "typeName": "boolean",
+                    "value": true
+                  },
+                  "isMultilineInput": {
+                    "typeName": "boolean",
+                    "value": true
+                  },
+                  "isPasswordInput": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "isPasswordToggleVisible": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "value": {
+                    "typeName": "variable",
+                    "value": "89d4ee32-282d-4435-b7e8-cc37f39f7d3e"
+                  },
+                  "changeAction": {
+                    "typeName": "action",
+                    "value": {}
+                  },
+                  "disabled": {
+                    "typeName": "variable",
+                    "value": "1b0ec71c-3e75-4fcb-8463-1090912c0793"
+                  }
+                }
+              },
+              {
+                "type": "text",
+                "properties": {
+                  "margin": {
+                    "typeName": "spacing",
+                    "value": [
+                      5,
+                      5,
+                      5,
+                      5
+                    ]
+                  },
+                  "alignment": {
+                    "typeName": "alignment",
+                    "value": "start"
+                  },
+                  "width": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "height": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "visible": {
+                    "typeName": "variable"
+                  },
+                  "preserveLayoutLocation": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "text": {
+                    "typeName": "interpolatedText",
+                    "value": "Required. Shown to the ticket owner as the opening note."
+                  },
+                  "bold": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "italic": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "underline": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "font": {
+                    "typeName": "font",
+                    "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                  },
+                  "fontSize": {
+                    "typeName": "integer",
+                    "value": 10
+                  },
+                  "justification": {
+                    "typeName": "text",
+                    "value": "left"
+                  },
+                  "backgroundColor": {
+                    "typeName": "null"
+                  },
+                  "textColor": {
+                    "typeName": "color",
+                    "value": "#5b6778"
+                  },
+                  "padding": {
+                    "typeName": "spacing",
+                    "value": 0
+                  }
+                }
+              },
+              {
+                "type": "button",
+                "properties": {
+                  "margin": {
+                    "typeName": "spacing",
+                    "value": [
+                      5,
+                      5,
+                      5,
+                      5
+                    ]
+                  },
+                  "alignment": {
+                    "typeName": "alignment",
+                    "value": "start"
+                  },
+                  "width": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "height": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "visible": {
+                    "typeName": "variable"
+                  },
+                  "preserveLayoutLocation": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "text": {
+                    "typeName": "interpolatedText",
+                    "value": "Create ticket"
+                  },
+                  "clickAction": {
+                    "typeName": "action",
+                    "value": {
+                      "actionName": "47484d27-ed64-4b15-94e3-4ef57935deaf",
+                      "actionArgumentValues": []
+                    }
+                  },
+                  "backgroundColor": {
+                    "typeName": "color",
+                    "value": "#1f5fbf"
+                  },
+                  "textColor": {
+                    "typeName": "color",
+                    "value": "#ffffff"
+                  },
+                  "bold": {
+                    "typeName": "boolean",
+                    "value": true
+                  },
+                  "italic": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "underline": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "font": {
+                    "typeName": "font",
+                    "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                  },
+                  "fontSize": {
+                    "typeName": "integer",
+                    "value": 12
+                  },
+                  "justification": {
+                    "typeName": "text",
+                    "value": "center"
+                  },
+                  "disabled": {
+                    "typeName": "variable",
+                    "value": "1b0ec71c-3e75-4fcb-8463-1090912c0793"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "verticalStackContainer",
+            "properties": {
+              "margin": {
+                "typeName": "spacing",
+                "value": [
+                  5,
+                  5,
+                  5,
+                  5
+                ]
+              },
+              "alignment": {
+                "typeName": "alignment",
+                "value": "start"
+              },
+              "width": {
+                "typeName": "sizing",
+                "value": {
+                  "sizeType": "stretch",
+                  "size": 100
+                }
+              },
+              "height": {
+                "typeName": "sizing",
+                "value": {
+                  "sizeType": "auto"
+                }
+              },
+              "visible": {
+                "typeName": "variable",
+                "value": "2fc9a7f4-2aa4-4bd1-96ed-b041f5f961e3"
+              },
+              "preserveLayoutLocation": {
+                "typeName": "boolean",
+                "value": false
+              },
+              "backgroundColor": {
+                "typeName": "color",
+                "value": "#fff4d6"
+              },
+              "padding": {
+                "typeName": "spacing",
+                "value": 10
+              },
+              "childArrangement": {
+                "typeName": "childArrangement",
+                "value": "start"
+              },
+              "border": {
+                "typeName": "border",
+                "value": {
+                  "width": 0,
+                  "style": "solid",
+                  "color": "000000"
+                }
+              }
+            },
+            "children": [
+              {
+                "type": "text",
+                "properties": {
+                  "margin": {
+                    "typeName": "spacing",
+                    "value": [
+                      5,
+                      5,
+                      5,
+                      5
+                    ]
+                  },
+                  "alignment": {
+                    "typeName": "alignment",
+                    "value": "start"
+                  },
+                  "width": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "height": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "visible": {
+                    "typeName": "variable"
+                  },
+                  "preserveLayoutLocation": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "text": {
+                    "typeName": "interpolatedText",
+                    "value": "Creating ticket…"
+                  },
+                  "bold": {
+                    "typeName": "boolean",
+                    "value": true
+                  },
+                  "italic": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "underline": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "font": {
+                    "typeName": "font",
+                    "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                  },
+                  "fontSize": {
+                    "typeName": "integer",
+                    "value": 13
+                  },
+                  "justification": {
+                    "typeName": "text",
+                    "value": "left"
+                  },
+                  "backgroundColor": {
+                    "typeName": "null"
+                  },
+                  "textColor": {
+                    "typeName": "color",
+                    "value": "#8a5a00"
+                  },
+                  "padding": {
+                    "typeName": "spacing",
+                    "value": 0
+                  }
+                }
+              },
+              {
+                "type": "text",
+                "properties": {
+                  "margin": {
+                    "typeName": "spacing",
+                    "value": [
+                      5,
+                      5,
+                      5,
+                      5
+                    ]
+                  },
+                  "alignment": {
+                    "typeName": "alignment",
+                    "value": "start"
+                  },
+                  "width": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "height": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "visible": {
+                    "typeName": "variable"
+                  },
+                  "preserveLayoutLocation": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "text": {
+                    "typeName": "interpolatedText",
+                    "value": "Sending to the ticketing system. This usually takes a few seconds."
+                  },
+                  "bold": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "italic": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "underline": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "font": {
+                    "typeName": "font",
+                    "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                  },
+                  "fontSize": {
+                    "typeName": "integer",
+                    "value": 12
+                  },
+                  "justification": {
+                    "typeName": "text",
+                    "value": "left"
+                  },
+                  "backgroundColor": {
+                    "typeName": "null"
+                  },
+                  "textColor": {
+                    "typeName": "color",
+                    "value": "#8a5a00"
+                  },
+                  "padding": {
+                    "typeName": "spacing",
+                    "value": 0
+                  }
+                }
+              },
+              {
+                "type": "button",
+                "properties": {
+                  "margin": {
+                    "typeName": "spacing",
+                    "value": [
+                      5,
+                      5,
+                      5,
+                      5
+                    ]
+                  },
+                  "alignment": {
+                    "typeName": "alignment",
+                    "value": "start"
+                  },
+                  "width": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "height": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "visible": {
+                    "typeName": "variable"
+                  },
+                  "preserveLayoutLocation": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "text": {
+                    "typeName": "interpolatedText",
+                    "value": "Cancel and try again"
+                  },
+                  "clickAction": {
+                    "typeName": "action",
+                    "value": {
+                      "actionName": "5ebce0c3-b8bb-4171-9b47-339336fdb149",
+                      "actionArgumentValues": []
+                    }
+                  },
+                  "backgroundColor": {
+                    "typeName": "null"
+                  },
+                  "textColor": {
+                    "typeName": "null"
+                  },
+                  "bold": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "italic": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "underline": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "font": {
+                    "typeName": "font",
+                    "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                  },
+                  "fontSize": {
+                    "typeName": "integer",
+                    "value": 12
+                  },
+                  "justification": {
+                    "typeName": "text",
+                    "value": "center"
+                  },
+                  "disabled": {
+                    "typeName": "variable"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "verticalStackContainer",
+            "properties": {
+              "margin": {
+                "typeName": "spacing",
+                "value": [
+                  5,
+                  5,
+                  5,
+                  5
+                ]
+              },
+              "alignment": {
+                "typeName": "alignment",
+                "value": "start"
+              },
+              "width": {
+                "typeName": "sizing",
+                "value": {
+                  "sizeType": "stretch",
+                  "size": 100
+                }
+              },
+              "height": {
+                "typeName": "sizing",
+                "value": {
+                  "sizeType": "auto"
+                }
+              },
+              "visible": {
+                "typeName": "variable",
+                "value": "6a8b8833-98d8-4623-bc84-1e967d966563"
+              },
+              "preserveLayoutLocation": {
+                "typeName": "boolean",
+                "value": false
+              },
+              "backgroundColor": {
+                "typeName": "color",
+                "value": "#e4f4ea"
+              },
+              "padding": {
+                "typeName": "spacing",
+                "value": 10
+              },
+              "childArrangement": {
+                "typeName": "childArrangement",
+                "value": "start"
+              },
+              "border": {
+                "typeName": "border",
+                "value": {
+                  "width": 0,
+                  "style": "solid",
+                  "color": "000000"
+                }
+              }
+            },
+            "children": [
+              {
+                "type": "text",
+                "properties": {
+                  "margin": {
+                    "typeName": "spacing",
+                    "value": [
+                      5,
+                      5,
+                      5,
+                      5
+                    ]
+                  },
+                  "alignment": {
+                    "typeName": "alignment",
+                    "value": "start"
+                  },
+                  "width": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "height": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "visible": {
+                    "typeName": "variable"
+                  },
+                  "preserveLayoutLocation": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "text": {
+                    "typeName": "interpolatedText",
+                    "value": "Ticket created"
+                  },
+                  "bold": {
+                    "typeName": "boolean",
+                    "value": true
+                  },
+                  "italic": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "underline": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "font": {
+                    "typeName": "font",
+                    "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                  },
+                  "fontSize": {
+                    "typeName": "integer",
+                    "value": 13
+                  },
+                  "justification": {
+                    "typeName": "text",
+                    "value": "left"
+                  },
+                  "backgroundColor": {
+                    "typeName": "null"
+                  },
+                  "textColor": {
+                    "typeName": "color",
+                    "value": "#1d7a4a"
+                  },
+                  "padding": {
+                    "typeName": "spacing",
+                    "value": 0
+                  }
+                }
+              },
+              {
+                "type": "text",
+                "properties": {
+                  "margin": {
+                    "typeName": "spacing",
+                    "value": [
+                      5,
+                      5,
+                      5,
+                      5
+                    ]
+                  },
+                  "alignment": {
+                    "typeName": "alignment",
+                    "value": "start"
+                  },
+                  "width": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "height": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "visible": {
+                    "typeName": "variable"
+                  },
+                  "preserveLayoutLocation": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "text": {
+                    "typeName": "interpolatedText",
+                    "value": "{{979fb881-57ee-40b5-8a88-f997e300bbec}}"
+                  },
+                  "bold": {
+                    "typeName": "boolean",
+                    "value": true
+                  },
+                  "italic": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "underline": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "font": {
+                    "typeName": "font",
+                    "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                  },
+                  "fontSize": {
+                    "typeName": "integer",
+                    "value": 18
+                  },
+                  "justification": {
+                    "typeName": "text",
+                    "value": "left"
+                  },
+                  "backgroundColor": {
+                    "typeName": "null"
+                  },
+                  "textColor": {
+                    "typeName": "null"
+                  },
+                  "padding": {
+                    "typeName": "spacing",
+                    "value": 0
+                  }
+                }
+              },
+              {
+                "type": "text",
+                "properties": {
+                  "margin": {
+                    "typeName": "spacing",
+                    "value": [
+                      5,
+                      5,
+                      5,
+                      5
+                    ]
+                  },
+                  "alignment": {
+                    "typeName": "alignment",
+                    "value": "start"
+                  },
+                  "width": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "height": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "visible": {
+                    "typeName": "variable"
+                  },
+                  "preserveLayoutLocation": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "text": {
+                    "typeName": "interpolatedText",
+                    "value": "Logged to Chat Logs. Give the customer the number and the expected response time."
+                  },
+                  "bold": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "italic": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "underline": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "font": {
+                    "typeName": "font",
+                    "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                  },
+                  "fontSize": {
+                    "typeName": "integer",
+                    "value": 12
+                  },
+                  "justification": {
+                    "typeName": "text",
+                    "value": "left"
+                  },
+                  "backgroundColor": {
+                    "typeName": "null"
+                  },
+                  "textColor": {
+                    "typeName": "color",
+                    "value": "#1d7a4a"
+                  },
+                  "padding": {
+                    "typeName": "spacing",
+                    "value": 0
+                  }
+                }
+              },
+              {
+                "type": "button",
+                "properties": {
+                  "margin": {
+                    "typeName": "spacing",
+                    "value": [
+                      5,
+                      5,
+                      5,
+                      5
+                    ]
+                  },
+                  "alignment": {
+                    "typeName": "alignment",
+                    "value": "start"
+                  },
+                  "width": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "height": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "visible": {
+                    "typeName": "variable"
+                  },
+                  "preserveLayoutLocation": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "text": {
+                    "typeName": "interpolatedText",
+                    "value": "Create another ticket"
+                  },
+                  "clickAction": {
+                    "typeName": "action",
+                    "value": {
+                      "actionName": "c5b0171d-80df-46a3-8089-ca73d8cd7a03",
+                      "actionArgumentValues": []
+                    }
+                  },
+                  "backgroundColor": {
+                    "typeName": "null"
+                  },
+                  "textColor": {
+                    "typeName": "null"
+                  },
+                  "bold": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "italic": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "underline": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "font": {
+                    "typeName": "font",
+                    "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                  },
+                  "fontSize": {
+                    "typeName": "integer",
+                    "value": 12
+                  },
+                  "justification": {
+                    "typeName": "text",
+                    "value": "center"
+                  },
+                  "disabled": {
+                    "typeName": "variable"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "verticalStackContainer",
+            "properties": {
+              "margin": {
+                "typeName": "spacing",
+                "value": [
+                  5,
+                  5,
+                  5,
+                  5
+                ]
+              },
+              "alignment": {
+                "typeName": "alignment",
+                "value": "start"
+              },
+              "width": {
+                "typeName": "sizing",
+                "value": {
+                  "sizeType": "stretch",
+                  "size": 100
+                }
+              },
+              "height": {
+                "typeName": "sizing",
+                "value": {
+                  "sizeType": "auto"
+                }
+              },
+              "visible": {
+                "typeName": "variable",
+                "value": "17589e86-6822-4a18-affa-78a44d8830f3"
+              },
+              "preserveLayoutLocation": {
+                "typeName": "boolean",
+                "value": false
+              },
+              "backgroundColor": {
+                "typeName": "color",
+                "value": "#fbe9e7"
+              },
+              "padding": {
+                "typeName": "spacing",
+                "value": 10
+              },
+              "childArrangement": {
+                "typeName": "childArrangement",
+                "value": "start"
+              },
+              "border": {
+                "typeName": "border",
+                "value": {
+                  "width": 0,
+                  "style": "solid",
+                  "color": "000000"
+                }
+              }
+            },
+            "children": [
+              {
+                "type": "text",
+                "properties": {
+                  "margin": {
+                    "typeName": "spacing",
+                    "value": [
+                      5,
+                      5,
+                      5,
+                      5
+                    ]
+                  },
+                  "alignment": {
+                    "typeName": "alignment",
+                    "value": "start"
+                  },
+                  "width": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "height": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "visible": {
+                    "typeName": "variable"
+                  },
+                  "preserveLayoutLocation": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "text": {
+                    "typeName": "interpolatedText",
+                    "value": "Ticket not created"
+                  },
+                  "bold": {
+                    "typeName": "boolean",
+                    "value": true
+                  },
+                  "italic": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "underline": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "font": {
+                    "typeName": "font",
+                    "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                  },
+                  "fontSize": {
+                    "typeName": "integer",
+                    "value": 13
+                  },
+                  "justification": {
+                    "typeName": "text",
+                    "value": "left"
+                  },
+                  "backgroundColor": {
+                    "typeName": "null"
+                  },
+                  "textColor": {
+                    "typeName": "color",
+                    "value": "#b3261e"
+                  },
+                  "padding": {
+                    "typeName": "spacing",
+                    "value": 0
+                  }
+                }
+              },
+              {
+                "type": "text",
+                "properties": {
+                  "margin": {
+                    "typeName": "spacing",
+                    "value": [
+                      5,
+                      5,
+                      5,
+                      5
+                    ]
+                  },
+                  "alignment": {
+                    "typeName": "alignment",
+                    "value": "start"
+                  },
+                  "width": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "height": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "visible": {
+                    "typeName": "variable"
+                  },
+                  "preserveLayoutLocation": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "text": {
+                    "typeName": "interpolatedText",
+                    "value": "{{e42ec1d2-9f0e-44ab-91f6-3823507ab60a}}"
+                  },
+                  "bold": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "italic": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "underline": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "font": {
+                    "typeName": "font",
+                    "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                  },
+                  "fontSize": {
+                    "typeName": "integer",
+                    "value": 12
+                  },
+                  "justification": {
+                    "typeName": "text",
+                    "value": "left"
+                  },
+                  "backgroundColor": {
+                    "typeName": "null"
+                  },
+                  "textColor": {
+                    "typeName": "color",
+                    "value": "#b3261e"
+                  },
+                  "padding": {
+                    "typeName": "spacing",
+                    "value": 0
+                  }
+                }
+              },
+              {
+                "type": "text",
+                "properties": {
+                  "margin": {
+                    "typeName": "spacing",
+                    "value": [
+                      5,
+                      5,
+                      5,
+                      5
+                    ]
+                  },
+                  "alignment": {
+                    "typeName": "alignment",
+                    "value": "start"
+                  },
+                  "width": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "height": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "visible": {
+                    "typeName": "variable"
+                  },
+                  "preserveLayoutLocation": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "text": {
+                    "typeName": "interpolatedText",
+                    "value": "Fix the issue and submit again. The attempt has been logged."
+                  },
+                  "bold": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "italic": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "underline": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "font": {
+                    "typeName": "font",
+                    "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                  },
+                  "fontSize": {
+                    "typeName": "integer",
+                    "value": 12
+                  },
+                  "justification": {
+                    "typeName": "text",
+                    "value": "left"
+                  },
+                  "backgroundColor": {
+                    "typeName": "null"
+                  },
+                  "textColor": {
+                    "typeName": "color",
+                    "value": "#b3261e"
+                  },
+                  "padding": {
+                    "typeName": "spacing",
+                    "value": 0
+                  }
+                }
+              },
+              {
+                "type": "button",
+                "properties": {
+                  "margin": {
+                    "typeName": "spacing",
+                    "value": [
+                      5,
+                      5,
+                      5,
+                      5
+                    ]
+                  },
+                  "alignment": {
+                    "typeName": "alignment",
+                    "value": "start"
+                  },
+                  "width": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "height": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "visible": {
+                    "typeName": "variable"
+                  },
+                  "preserveLayoutLocation": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "text": {
+                    "typeName": "interpolatedText",
+                    "value": "Back to form"
+                  },
+                  "clickAction": {
+                    "typeName": "action",
+                    "value": {
+                      "actionName": "c5b0171d-80df-46a3-8089-ca73d8cd7a03",
+                      "actionArgumentValues": []
+                    }
+                  },
+                  "backgroundColor": {
+                    "typeName": "null"
+                  },
+                  "textColor": {
+                    "typeName": "null"
+                  },
+                  "bold": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "italic": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "underline": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "font": {
+                    "typeName": "font",
+                    "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                  },
+                  "fontSize": {
+                    "typeName": "integer",
+                    "value": 12
+                  },
+                  "justification": {
+                    "typeName": "text",
+                    "value": "center"
+                  },
+                  "disabled": {
+                    "typeName": "variable"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "verticalStackContainer",
+            "properties": {
+              "margin": {
+                "typeName": "spacing",
+                "value": [
+                  5,
+                  5,
+                  5,
+                  5
+                ]
+              },
+              "alignment": {
+                "typeName": "alignment",
+                "value": "start"
+              },
+              "width": {
+                "typeName": "sizing",
+                "value": {
+                  "sizeType": "stretch",
+                  "size": 100
+                }
+              },
+              "height": {
+                "typeName": "sizing",
+                "value": {
+                  "sizeType": "auto"
+                }
+              },
+              "visible": {
+                "typeName": "variable",
+                "value": "81e1461c-2727-4c51-9204-5911222eccac"
+              },
+              "preserveLayoutLocation": {
+                "typeName": "boolean",
+                "value": false
+              },
+              "backgroundColor": {
+                "typeName": "color",
+                "value": "#fbe9e7"
+              },
+              "padding": {
+                "typeName": "spacing",
+                "value": 10
+              },
+              "childArrangement": {
+                "typeName": "childArrangement",
+                "value": "start"
+              },
+              "border": {
+                "typeName": "border",
+                "value": {
+                  "width": 0,
+                  "style": "solid",
+                  "color": "000000"
+                }
+              }
+            },
+            "children": [
+              {
+                "type": "text",
+                "properties": {
+                  "margin": {
+                    "typeName": "spacing",
+                    "value": [
+                      5,
+                      5,
+                      5,
+                      5
+                    ]
+                  },
+                  "alignment": {
+                    "typeName": "alignment",
+                    "value": "start"
+                  },
+                  "width": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "height": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "visible": {
+                    "typeName": "variable"
+                  },
+                  "preserveLayoutLocation": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "text": {
+                    "typeName": "interpolatedText",
+                    "value": "No reply from the ticketing system"
+                  },
+                  "bold": {
+                    "typeName": "boolean",
+                    "value": true
+                  },
+                  "italic": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "underline": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "font": {
+                    "typeName": "font",
+                    "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                  },
+                  "fontSize": {
+                    "typeName": "integer",
+                    "value": 13
+                  },
+                  "justification": {
+                    "typeName": "text",
+                    "value": "left"
+                  },
+                  "backgroundColor": {
+                    "typeName": "null"
+                  },
+                  "textColor": {
+                    "typeName": "color",
+                    "value": "#b3261e"
+                  },
+                  "padding": {
+                    "typeName": "spacing",
+                    "value": 0
+                  }
+                }
+              },
+              {
+                "type": "text",
+                "properties": {
+                  "margin": {
+                    "typeName": "spacing",
+                    "value": [
+                      5,
+                      5,
+                      5,
+                      5
+                    ]
+                  },
+                  "alignment": {
+                    "typeName": "alignment",
+                    "value": "start"
+                  },
+                  "width": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "height": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "visible": {
+                    "typeName": "variable"
+                  },
+                  "preserveLayoutLocation": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "text": {
+                    "typeName": "interpolatedText",
+                    "value": "Try again. If it keeps happening, raise it with the service desk and create the ticket manually."
+                  },
+                  "bold": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "italic": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "underline": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "font": {
+                    "typeName": "font",
+                    "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                  },
+                  "fontSize": {
+                    "typeName": "integer",
+                    "value": 12
+                  },
+                  "justification": {
+                    "typeName": "text",
+                    "value": "left"
+                  },
+                  "backgroundColor": {
+                    "typeName": "null"
+                  },
+                  "textColor": {
+                    "typeName": "color",
+                    "value": "#b3261e"
+                  },
+                  "padding": {
+                    "typeName": "spacing",
+                    "value": 0
+                  }
+                }
+              },
+              {
+                "type": "button",
+                "properties": {
+                  "margin": {
+                    "typeName": "spacing",
+                    "value": [
+                      5,
+                      5,
+                      5,
+                      5
+                    ]
+                  },
+                  "alignment": {
+                    "typeName": "alignment",
+                    "value": "start"
+                  },
+                  "width": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "height": {
+                    "typeName": "sizing",
+                    "value": {
+                      "sizeType": "auto"
+                    }
+                  },
+                  "visible": {
+                    "typeName": "variable"
+                  },
+                  "preserveLayoutLocation": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "text": {
+                    "typeName": "interpolatedText",
+                    "value": "Back to form"
+                  },
+                  "clickAction": {
+                    "typeName": "action",
+                    "value": {
+                      "actionName": "c5b0171d-80df-46a3-8089-ca73d8cd7a03",
+                      "actionArgumentValues": []
+                    }
+                  },
+                  "backgroundColor": {
+                    "typeName": "null"
+                  },
+                  "textColor": {
+                    "typeName": "null"
+                  },
+                  "bold": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "italic": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "underline": {
+                    "typeName": "boolean",
+                    "value": false
+                  },
+                  "font": {
+                    "typeName": "font",
+                    "value": "Arial, \"Helvetica Neue\", Helvetica, sans-serif"
+                  },
+                  "fontSize": {
+                    "typeName": "integer",
+                    "value": 12
+                  },
+                  "justification": {
+                    "typeName": "text",
+                    "value": "center"
+                  },
+                  "disabled": {
+                    "typeName": "variable"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "features": {
+    "dialer": {
+      "properties": {
+        "enabled": {
+          "typeName": "boolean",
+          "value": false
+        },
+        "contactListId": {
+          "typeName": "text",
+          "value": ""
+        },
+        "onContactDataLoadAction": {
+          "typeName": "action",
+          "value": {}
+        }
+      }
+    },
+    "scripter": {
+      "properties": {
+        "enabled": {
+          "typeName": "boolean",
+          "value": true
+        }
+      }
+    },
+    "screenPop": {
+      "properties": {
+        "enabled": {
+          "typeName": "boolean",
+          "value": false
+        }
+      }
+    },
+    "callback": {
+      "properties": {
+        "enabled": {
+          "typeName": "boolean",
+          "value": false
+        }
+      }
+    },
+    "chat": {
+      "properties": {
+        "enabled": {
+          "typeName": "boolean",
+          "value": true
+        }
+      }
+    },
+    "email": {
+      "properties": {
+        "enabled": {
+          "typeName": "boolean",
+          "value": false
+        }
+      }
+    },
+    "message": {
+      "properties": {
+        "enabled": {
+          "typeName": "boolean",
+          "value": true
+        }
+      }
+    },
+    "bridge": {
+      "properties": {
+        "enabled": {
+          "typeName": "boolean",
+          "value": true
+        }
+      }
+    },
+    "uuiData": {
+      "properties": {
+        "enabled": {
+          "typeName": "boolean",
+          "value": false
+        }
+      }
+    },
+    "customerSecuredData": {
+      "properties": {
+        "enabled": {
+          "typeName": "boolean",
+          "value": false
+        }
+      }
+    },
+    "list": {
+      "properties": {
+        "enabled": {
+          "typeName": "boolean",
+          "value": false
+        }
+      }
+    },
+    "workItem": {
+      "properties": {
+        "enabled": {
+          "typeName": "boolean",
+          "value": false
+        }
+      }
+    }
+  },
+  "variables": [
+    {
+      "id": "0e54e49a-862e-4dcd-8bf4-be1b34df35e4",
+      "name": "fullname",
+      "description": "Participant data key: fullname",
+      "type": {
+        "isDynamic": false,
+        "isList": false,
+        "name": "string"
+      },
+      "value": "",
+      "input": true,
+      "output": false
+    },
+    {
+      "id": "6cfd5e60-ffe8-4a7b-8535-db01a037774a",
+      "name": "email",
+      "description": "Participant data key: email",
+      "type": {
+        "isDynamic": false,
+        "isList": false,
+        "name": "string"
+      },
+      "value": "",
+      "input": true,
+      "output": false
+    },
+    {
+      "id": "15387efb-2f4e-4c96-b039-cb99daa157f3",
+      "name": "location",
+      "description": "Participant data key: location",
+      "type": {
+        "isDynamic": false,
+        "isList": false,
+        "name": "string"
+      },
+      "value": "",
+      "input": true,
+      "output": false
+    },
+    {
+      "id": "876329cd-fd25-4b62-b315-79345281542e",
+      "name": "ticketCategory",
+      "description": "",
+      "type": {
+        "isDynamic": false,
+        "isList": false,
+        "name": "string"
+      },
+      "value": "Technical fault",
+      "input": false,
+      "output": false
+    },
+    {
+      "id": "0a6ecd78-74ae-4b44-a451-4118cf8c9d7b",
+      "name": "ticketPriority",
+      "description": "",
+      "type": {
+        "isDynamic": false,
+        "isList": false,
+        "name": "string"
+      },
+      "value": "Normal",
+      "input": false,
+      "output": false
+    },
+    {
+      "id": "89d4ee32-282d-4435-b7e8-cc37f39f7d3e",
+      "name": "ticketDescription",
+      "description": "",
+      "type": {
+        "isDynamic": false,
+        "isList": false,
+        "name": "string"
+      },
+      "value": "",
+      "input": false,
+      "output": false
+    },
+    {
+      "id": "992c260b-61f7-44c3-90ea-3150e6a47403",
+      "name": "showForm",
+      "description": "Create ticket card visible",
+      "type": {
+        "isDynamic": false,
+        "isList": false,
+        "name": "boolean"
+      },
+      "value": true,
+      "input": false,
+      "output": false
+    },
+    {
+      "id": "1b0ec71c-3e75-4fcb-8463-1090912c0793",
+      "name": "isSubmitting",
+      "description": "Disables Submit while a request is in flight",
+      "type": {
+        "isDynamic": false,
+        "isList": false,
+        "name": "boolean"
+      },
+      "value": false,
+      "input": false,
+      "output": false
+    },
+    {
+      "id": "2fc9a7f4-2aa4-4bd1-96ed-b041f5f961e3",
+      "name": "showPending",
+      "description": "",
+      "type": {
+        "isDynamic": false,
+        "isList": false,
+        "name": "boolean"
+      },
+      "value": false,
+      "input": false,
+      "output": false
+    },
+    {
+      "id": "6a8b8833-98d8-4623-bc84-1e967d966563",
+      "name": "ticketCreated",
+      "description": "",
+      "type": {
+        "isDynamic": false,
+        "isList": false,
+        "name": "boolean"
+      },
+      "value": false,
+      "input": false,
+      "output": false
+    },
+    {
+      "id": "17589e86-6822-4a18-affa-78a44d8830f3",
+      "name": "ticketFailed",
+      "description": "",
+      "type": {
+        "isDynamic": false,
+        "isList": false,
+        "name": "boolean"
+      },
+      "value": false,
+      "input": false,
+      "output": false
+    },
+    {
+      "id": "81e1461c-2727-4c51-9204-5911222eccac",
+      "name": "showTimeoutError",
+      "description": "",
+      "type": {
+        "isDynamic": false,
+        "isList": false,
+        "name": "boolean"
+      },
+      "value": false,
+      "input": false,
+      "output": false
+    },
+    {
+      "id": "cc655eda-55f3-4209-920d-87c6d9959932",
+      "name": "ticketReturnCode",
+      "description": "99 = not called yet",
+      "type": {
+        "isDynamic": false,
+        "isList": false,
+        "name": "number"
+      },
+      "value": 99,
+      "input": false,
+      "output": false
+    },
+    {
+      "id": "979fb881-57ee-40b5-8a88-f997e300bbec",
+      "name": "ticketNumber",
+      "description": "Output of Create Ticket",
+      "type": {
+        "isDynamic": false,
+        "isList": false,
+        "name": "string"
+      },
+      "value": "",
+      "input": false,
+      "output": false
+    },
+    {
+      "id": "e42ec1d2-9f0e-44ab-91f6-3823507ab60a",
+      "name": "ticketMessage",
+      "description": "Output of Create Ticket",
+      "type": {
+        "isDynamic": false,
+        "isList": false,
+        "name": "string"
+      },
+      "value": "",
+      "input": false,
+      "output": false
+    },
+    {
+      "id": "8b95c99c-fb16-4a3b-acfa-34f7191da716",
+      "name": "ticketOutcome",
+      "description": "CREATED or FAILED",
+      "type": {
+        "isDynamic": false,
+        "isList": false,
+        "name": "string"
+      },
+      "value": "",
+      "input": false,
+      "output": false
+    }
+  ],
+  "customActions": [
+    {
+      "id": "47484d27-ed64-4b15-94e3-4ef57935deaf",
+      "name": "Create Ticket",
+      "action": {
+        "block": [
+          {
+            "type": "if",
+            "condition": {
+              "type": "standard",
+              "leftHandSide": {
+                "typeName": "variable",
+                "value": "89d4ee32-282d-4435-b7e8-cc37f39f7d3e"
+              },
+              "operator": "notEqual",
+              "rightHandSide": {
+                "typeName": "interpolatedText",
+                "value": ""
+              }
+            },
+            "ifBlock": [
+              {
+                "type": "action",
+                "actionName": "scripter.setVariable",
+                "actionArgumentValues": [
+                  {
+                    "typeName": "variableWithValue",
+                    "value": {
+                      "variable": {
+                        "typeName": "variable",
+                        "value": "1b0ec71c-3e75-4fcb-8463-1090912c0793"
+                      },
+                      "variableTypeName": "boolean",
+                      "valueOfVariableProperty": {
+                        "typeName": "boolean",
+                        "value": true
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "action",
+                "actionName": "scripter.setVariable",
+                "actionArgumentValues": [
+                  {
+                    "typeName": "variableWithValue",
+                    "value": {
+                      "variable": {
+                        "typeName": "variable",
+                        "value": "6a8b8833-98d8-4623-bc84-1e967d966563"
+                      },
+                      "variableTypeName": "boolean",
+                      "valueOfVariableProperty": {
+                        "typeName": "boolean",
+                        "value": false
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "action",
+                "actionName": "scripter.setVariable",
+                "actionArgumentValues": [
+                  {
+                    "typeName": "variableWithValue",
+                    "value": {
+                      "variable": {
+                        "typeName": "variable",
+                        "value": "17589e86-6822-4a18-affa-78a44d8830f3"
+                      },
+                      "variableTypeName": "boolean",
+                      "valueOfVariableProperty": {
+                        "typeName": "boolean",
+                        "value": false
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "action",
+                "actionName": "scripter.setVariable",
+                "actionArgumentValues": [
+                  {
+                    "typeName": "variableWithValue",
+                    "value": {
+                      "variable": {
+                        "typeName": "variable",
+                        "value": "81e1461c-2727-4c51-9204-5911222eccac"
+                      },
+                      "variableTypeName": "boolean",
+                      "valueOfVariableProperty": {
+                        "typeName": "boolean",
+                        "value": false
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "action",
+                "actionName": "scripter.setVariable",
+                "actionArgumentValues": [
+                  {
+                    "typeName": "variableWithValue",
+                    "value": {
+                      "variable": {
+                        "typeName": "variable",
+                        "value": "8b95c99c-fb16-4a3b-acfa-34f7191da716"
+                      },
+                      "variableTypeName": "string",
+                      "valueOfVariableProperty": {
+                        "typeName": "interpolatedText",
+                        "value": ""
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "action",
+                "actionName": "scripter.setVariable",
+                "actionArgumentValues": [
+                  {
+                    "typeName": "variableWithValue",
+                    "value": {
+                      "variable": {
+                        "typeName": "variable",
+                        "value": "992c260b-61f7-44c3-90ea-3150e6a47403"
+                      },
+                      "variableTypeName": "boolean",
+                      "valueOfVariableProperty": {
+                        "typeName": "boolean",
+                        "value": false
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "action",
+                "actionName": "scripter.setVariable",
+                "actionArgumentValues": [
+                  {
+                    "typeName": "variableWithValue",
+                    "value": {
+                      "variable": {
+                        "typeName": "variable",
+                        "value": "2fc9a7f4-2aa4-4bd1-96ed-b041f5f961e3"
+                      },
+                      "variableTypeName": "boolean",
+                      "valueOfVariableProperty": {
+                        "typeName": "boolean",
+                        "value": true
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "action",
+                "actionName": "bridge.bridge",
+                "actionArgumentValues": [
+                  {
+                    "typeName": "bridgeActionArguments",
+                    "value": {
+                      "actionName": "custom_-_REPLACE_WITH_CREATE_TICKET_DATA_ACTION_ID",
+                      "inputProperty": {
+                        "typeName": "objectFields",
+                        "value": {
+                          "fieldProperties": {
+                            "fullname": {
+                              "typeName": "variable",
+                              "value": "0e54e49a-862e-4dcd-8bf4-be1b34df35e4"
+                            },
+                            "email": {
+                              "typeName": "variable",
+                              "value": "6cfd5e60-ffe8-4a7b-8535-db01a037774a"
+                            },
+                            "location": {
+                              "typeName": "variable",
+                              "value": "15387efb-2f4e-4c96-b039-cb99daa157f3"
+                            },
+                            "category": {
+                              "typeName": "variable",
+                              "value": "876329cd-fd25-4b62-b315-79345281542e"
+                            },
+                            "priority": {
+                              "typeName": "variable",
+                              "value": "0a6ecd78-74ae-4b44-a451-4118cf8c9d7b"
+                            },
+                            "description": {
+                              "typeName": "variable",
+                              "value": "89d4ee32-282d-4435-b7e8-cc37f39f7d3e"
+                            },
+                            "conversationId": {
+                              "typeName": "variable",
+                              "value": "scripter.interactionId"
+                            },
+                            "agentId": {
+                              "typeName": "variable",
+                              "value": "scripter.agentId"
+                            }
+                          }
+                        }
+                      },
+                      "successProperty": {
+                        "typeName": "objectFields",
+                        "value": {
+                          "fieldProperties": {
+                            "ticketOutcome": {
+                              "typeName": "variable",
+                              "value": "8b95c99c-fb16-4a3b-acfa-34f7191da716"
+                            },
+                            "ticketReturnCode": {
+                              "typeName": "variable",
+                              "value": "cc655eda-55f3-4209-920d-87c6d9959932"
+                            },
+                            "ticketNumber": {
+                              "typeName": "variable",
+                              "value": "979fb881-57ee-40b5-8a88-f997e300bbec"
+                            },
+                            "ticketMessage": {
+                              "typeName": "variable",
+                              "value": "e42ec1d2-9f0e-44ab-91f6-3823507ab60a"
+                            }
+                          }
+                        }
+                      },
+                      "isHedwigAction": true
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "if",
+                "condition": {
+                  "type": "standard",
+                  "leftHandSide": {
+                    "typeName": "variable",
+                    "value": "8b95c99c-fb16-4a3b-acfa-34f7191da716"
+                  },
+                  "operator": "notEqual",
+                  "rightHandSide": {
+                    "typeName": "interpolatedText",
+                    "value": "CREATED"
+                  }
+                },
+                "ifBlock": [
+                  {
+                    "type": "action",
+                    "actionName": "scripter.setVariable",
+                    "actionArgumentValues": [
+                      {
+                        "typeName": "variableWithValue",
+                        "value": {
+                          "variable": {
+                            "typeName": "variable",
+                            "value": "17589e86-6822-4a18-affa-78a44d8830f3"
+                          },
+                          "variableTypeName": "boolean",
+                          "valueOfVariableProperty": {
+                            "typeName": "boolean",
+                            "value": true
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "elseBlock": [
+                  {
+                    "type": "action",
+                    "actionName": "scripter.setVariable",
+                    "actionArgumentValues": [
+                      {
+                        "typeName": "variableWithValue",
+                        "value": {
+                          "variable": {
+                            "typeName": "variable",
+                            "value": "6a8b8833-98d8-4623-bc84-1e967d966563"
+                          },
+                          "variableTypeName": "boolean",
+                          "valueOfVariableProperty": {
+                            "typeName": "boolean",
+                            "value": true
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "action",
+                "actionName": "bridge.bridge",
+                "actionArgumentValues": [
+                  {
+                    "typeName": "bridgeActionArguments",
+                    "value": {
+                      "actionName": "custom_-_REPLACE_WITH_CHAT_LOGS_DATA_ACTION_ID",
+                      "inputProperty": {
+                        "typeName": "objectFields",
+                        "value": {
+                          "fieldProperties": {
+                            "key": {
+                              "typeName": "variable",
+                              "value": "scripter.interactionId"
+                            },
+                            "userId": {
+                              "typeName": "variable",
+                              "value": "scripter.agentId"
+                            },
+                            "conversationId": {
+                              "typeName": "variable",
+                              "value": "scripter.interactionId"
+                            },
+                            "ticketNumber": {
+                              "typeName": "variable",
+                              "value": "979fb881-57ee-40b5-8a88-f997e300bbec"
+                            },
+                            "outcome": {
+                              "typeName": "variable",
+                              "value": "8b95c99c-fb16-4a3b-acfa-34f7191da716"
+                            },
+                            "returnCode": {
+                              "typeName": "variable",
+                              "value": "cc655eda-55f3-4209-920d-87c6d9959932"
+                            },
+                            "message": {
+                              "typeName": "variable",
+                              "value": "e42ec1d2-9f0e-44ab-91f6-3823507ab60a"
+                            },
+                            "category": {
+                              "typeName": "variable",
+                              "value": "876329cd-fd25-4b62-b315-79345281542e"
+                            },
+                            "priority": {
+                              "typeName": "variable",
+                              "value": "0a6ecd78-74ae-4b44-a451-4118cf8c9d7b"
+                            },
+                            "customerEmail": {
+                              "typeName": "variable",
+                              "value": "6cfd5e60-ffe8-4a7b-8535-db01a037774a"
+                            }
+                          }
+                        }
+                      },
+                      "successProperty": {
+                        "typeName": "objectFields",
+                        "value": {
+                          "fieldProperties": {}
+                        }
+                      },
+                      "isHedwigAction": true
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "action",
+                "actionName": "scripter.setVariable",
+                "actionArgumentValues": [
+                  {
+                    "typeName": "variableWithValue",
+                    "value": {
+                      "variable": {
+                        "typeName": "variable",
+                        "value": "2fc9a7f4-2aa4-4bd1-96ed-b041f5f961e3"
+                      },
+                      "variableTypeName": "boolean",
+                      "valueOfVariableProperty": {
+                        "typeName": "boolean",
+                        "value": false
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "action",
+                "actionName": "scripter.setVariable",
+                "actionArgumentValues": [
+                  {
+                    "typeName": "variableWithValue",
+                    "value": {
+                      "variable": {
+                        "typeName": "variable",
+                        "value": "1b0ec71c-3e75-4fcb-8463-1090912c0793"
+                      },
+                      "variableTypeName": "boolean",
+                      "valueOfVariableProperty": {
+                        "typeName": "boolean",
+                        "value": false
+                      }
+                    }
+                  }
+                ]
+              }
+            ],
+            "elseBlock": [
+              {
+                "type": "action",
+                "actionName": "scripter.setVariable",
+                "actionArgumentValues": [
+                  {
+                    "typeName": "variableWithValue",
+                    "value": {
+                      "variable": {
+                        "typeName": "variable",
+                        "value": "e42ec1d2-9f0e-44ab-91f6-3823507ab60a"
+                      },
+                      "variableTypeName": "string",
+                      "valueOfVariableProperty": {
+                        "typeName": "interpolatedText",
+                        "value": "Description is required."
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "action",
+                "actionName": "scripter.setVariable",
+                "actionArgumentValues": [
+                  {
+                    "typeName": "variableWithValue",
+                    "value": {
+                      "variable": {
+                        "typeName": "variable",
+                        "value": "6a8b8833-98d8-4623-bc84-1e967d966563"
+                      },
+                      "variableTypeName": "boolean",
+                      "valueOfVariableProperty": {
+                        "typeName": "boolean",
+                        "value": false
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "action",
+                "actionName": "scripter.setVariable",
+                "actionArgumentValues": [
+                  {
+                    "typeName": "variableWithValue",
+                    "value": {
+                      "variable": {
+                        "typeName": "variable",
+                        "value": "17589e86-6822-4a18-affa-78a44d8830f3"
+                      },
+                      "variableTypeName": "boolean",
+                      "valueOfVariableProperty": {
+                        "typeName": "boolean",
+                        "value": true
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "c5b0171d-80df-46a3-8089-ca73d8cd7a03",
+      "name": "Reset Ticket Form",
+      "action": {
+        "block": [
+          {
+            "type": "action",
+            "actionName": "scripter.setVariable",
+            "actionArgumentValues": [
+              {
+                "typeName": "variableWithValue",
+                "value": {
+                  "variable": {
+                    "typeName": "variable",
+                    "value": "1b0ec71c-3e75-4fcb-8463-1090912c0793"
+                  },
+                  "variableTypeName": "boolean",
+                  "valueOfVariableProperty": {
+                    "typeName": "boolean",
+                    "value": false
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "action",
+            "actionName": "scripter.setVariable",
+            "actionArgumentValues": [
+              {
+                "typeName": "variableWithValue",
+                "value": {
+                  "variable": {
+                    "typeName": "variable",
+                    "value": "2fc9a7f4-2aa4-4bd1-96ed-b041f5f961e3"
+                  },
+                  "variableTypeName": "boolean",
+                  "valueOfVariableProperty": {
+                    "typeName": "boolean",
+                    "value": false
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "action",
+            "actionName": "scripter.setVariable",
+            "actionArgumentValues": [
+              {
+                "typeName": "variableWithValue",
+                "value": {
+                  "variable": {
+                    "typeName": "variable",
+                    "value": "6a8b8833-98d8-4623-bc84-1e967d966563"
+                  },
+                  "variableTypeName": "boolean",
+                  "valueOfVariableProperty": {
+                    "typeName": "boolean",
+                    "value": false
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "action",
+            "actionName": "scripter.setVariable",
+            "actionArgumentValues": [
+              {
+                "typeName": "variableWithValue",
+                "value": {
+                  "variable": {
+                    "typeName": "variable",
+                    "value": "17589e86-6822-4a18-affa-78a44d8830f3"
+                  },
+                  "variableTypeName": "boolean",
+                  "valueOfVariableProperty": {
+                    "typeName": "boolean",
+                    "value": false
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "action",
+            "actionName": "scripter.setVariable",
+            "actionArgumentValues": [
+              {
+                "typeName": "variableWithValue",
+                "value": {
+                  "variable": {
+                    "typeName": "variable",
+                    "value": "81e1461c-2727-4c51-9204-5911222eccac"
+                  },
+                  "variableTypeName": "boolean",
+                  "valueOfVariableProperty": {
+                    "typeName": "boolean",
+                    "value": false
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "action",
+            "actionName": "scripter.setVariable",
+            "actionArgumentValues": [
+              {
+                "typeName": "variableWithValue",
+                "value": {
+                  "variable": {
+                    "typeName": "variable",
+                    "value": "992c260b-61f7-44c3-90ea-3150e6a47403"
+                  },
+                  "variableTypeName": "boolean",
+                  "valueOfVariableProperty": {
+                    "typeName": "boolean",
+                    "value": true
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "action",
+            "actionName": "scripter.setVariable",
+            "actionArgumentValues": [
+              {
+                "typeName": "variableWithValue",
+                "value": {
+                  "variable": {
+                    "typeName": "variable",
+                    "value": "cc655eda-55f3-4209-920d-87c6d9959932"
+                  },
+                  "variableTypeName": "number",
+                  "valueOfVariableProperty": {
+                    "typeName": "integer",
+                    "value": 99
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "action",
+            "actionName": "scripter.setVariable",
+            "actionArgumentValues": [
+              {
+                "typeName": "variableWithValue",
+                "value": {
+                  "variable": {
+                    "typeName": "variable",
+                    "value": "8b95c99c-fb16-4a3b-acfa-34f7191da716"
+                  },
+                  "variableTypeName": "string",
+                  "valueOfVariableProperty": {
+                    "typeName": "interpolatedText",
+                    "value": ""
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "action",
+            "actionName": "scripter.setVariable",
+            "actionArgumentValues": [
+              {
+                "typeName": "variableWithValue",
+                "value": {
+                  "variable": {
+                    "typeName": "variable",
+                    "value": "e42ec1d2-9f0e-44ab-91f6-3823507ab60a"
+                  },
+                  "variableTypeName": "string",
+                  "valueOfVariableProperty": {
+                    "typeName": "interpolatedText",
+                    "value": ""
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "action",
+            "actionName": "scripter.setVariable",
+            "actionArgumentValues": [
+              {
+                "typeName": "variableWithValue",
+                "value": {
+                  "variable": {
+                    "typeName": "variable",
+                    "value": "979fb881-57ee-40b5-8a88-f997e300bbec"
+                  },
+                  "variableTypeName": "string",
+                  "valueOfVariableProperty": {
+                    "typeName": "interpolatedText",
+                    "value": ""
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "5ebce0c3-b8bb-4171-9b47-339336fdb149",
+      "name": "Cancel Ticket",
+      "action": {
+        "block": [
+          {
+            "type": "action",
+            "actionName": "scripter.setVariable",
+            "actionArgumentValues": [
+              {
+                "typeName": "variableWithValue",
+                "value": {
+                  "variable": {
+                    "typeName": "variable",
+                    "value": "1b0ec71c-3e75-4fcb-8463-1090912c0793"
+                  },
+                  "variableTypeName": "boolean",
+                  "valueOfVariableProperty": {
+                    "typeName": "boolean",
+                    "value": false
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "action",
+            "actionName": "scripter.setVariable",
+            "actionArgumentValues": [
+              {
+                "typeName": "variableWithValue",
+                "value": {
+                  "variable": {
+                    "typeName": "variable",
+                    "value": "2fc9a7f4-2aa4-4bd1-96ed-b041f5f961e3"
+                  },
+                  "variableTypeName": "boolean",
+                  "valueOfVariableProperty": {
+                    "typeName": "boolean",
+                    "value": false
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "action",
+            "actionName": "scripter.setVariable",
+            "actionArgumentValues": [
+              {
+                "typeName": "variableWithValue",
+                "value": {
+                  "variable": {
+                    "typeName": "variable",
+                    "value": "6a8b8833-98d8-4623-bc84-1e967d966563"
+                  },
+                  "variableTypeName": "boolean",
+                  "valueOfVariableProperty": {
+                    "typeName": "boolean",
+                    "value": false
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "action",
+            "actionName": "scripter.setVariable",
+            "actionArgumentValues": [
+              {
+                "typeName": "variableWithValue",
+                "value": {
+                  "variable": {
+                    "typeName": "variable",
+                    "value": "17589e86-6822-4a18-affa-78a44d8830f3"
+                  },
+                  "variableTypeName": "boolean",
+                  "valueOfVariableProperty": {
+                    "typeName": "boolean",
+                    "value": false
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "action",
+            "actionName": "scripter.setVariable",
+            "actionArgumentValues": [
+              {
+                "typeName": "variableWithValue",
+                "value": {
+                  "variable": {
+                    "typeName": "variable",
+                    "value": "81e1461c-2727-4c51-9204-5911222eccac"
+                  },
+                  "variableTypeName": "boolean",
+                  "valueOfVariableProperty": {
+                    "typeName": "boolean",
+                    "value": true
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "action",
+            "actionName": "scripter.setVariable",
+            "actionArgumentValues": [
+              {
+                "typeName": "variableWithValue",
+                "value": {
+                  "variable": {
+                    "typeName": "variable",
+                    "value": "992c260b-61f7-44c3-90ea-3150e6a47403"
+                  },
+                  "variableTypeName": "boolean",
+                  "valueOfVariableProperty": {
+                    "typeName": "boolean",
+                    "value": true
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "action",
+            "actionName": "scripter.setVariable",
+            "actionArgumentValues": [
+              {
+                "typeName": "variableWithValue",
+                "value": {
+                  "variable": {
+                    "typeName": "variable",
+                    "value": "cc655eda-55f3-4209-920d-87c6d9959932"
+                  },
+                  "variableTypeName": "number",
+                  "valueOfVariableProperty": {
+                    "typeName": "integer",
+                    "value": 99
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "action",
+            "actionName": "scripter.setVariable",
+            "actionArgumentValues": [
+              {
+                "typeName": "variableWithValue",
+                "value": {
+                  "variable": {
+                    "typeName": "variable",
+                    "value": "8b95c99c-fb16-4a3b-acfa-34f7191da716"
+                  },
+                  "variableTypeName": "string",
+                  "valueOfVariableProperty": {
+                    "typeName": "interpolatedText",
+                    "value": ""
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "action",
+            "actionName": "scripter.setVariable",
+            "actionArgumentValues": [
+              {
+                "typeName": "variableWithValue",
+                "value": {
+                  "variable": {
+                    "typeName": "variable",
+                    "value": "e42ec1d2-9f0e-44ab-91f6-3823507ab60a"
+                  },
+                  "variableTypeName": "string",
+                  "valueOfVariableProperty": {
+                    "typeName": "interpolatedText",
+                    "value": ""
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "action",
+            "actionName": "scripter.setVariable",
+            "actionArgumentValues": [
+              {
+                "typeName": "variableWithValue",
+                "value": {
+                  "variable": {
+                    "typeName": "variable",
+                    "value": "979fb881-57ee-40b5-8a88-f997e300bbec"
+                  },
+                  "variableTypeName": "string",
+                  "valueOfVariableProperty": {
+                    "typeName": "interpolatedText",
+                    "value": ""
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "dataVersion": 0
+}

@@ -1,7 +1,9 @@
 # Page build: "Chat Page"
 
-Build order matters a little: create the variables first, then containers, then
-components, then bind Visible / Disabled / Click Action.
+Everything on this page is already in `scripts/chat-ticket-script.script`. Use this
+document to review the imported script or to rebuild it by hand in another org.
+If you build by hand: create the variables first, then containers, then components,
+then bind Visible / Disabled / Click Action.
 
 Where a property label below is marked *(verify)*, the name is from memory rather than
 from the current Genesys documentation; the property exists, the label may differ slightly.
@@ -33,9 +35,8 @@ participant data keys written in the Architect flow (case-sensitive).
 | `showForm` | True/False | No | `True` | Form container visibility |
 | `isSubmitting` | True/False | No | `False` | Disables Submit while in flight |
 | `showPending` | True/False | No | `False` | "Creating ticket…" panel |
-| `ticketDone` | True/False | No | `False` | Set by the data action on any 2xx response |
-| `ticketCreated` | True/False | No | `False` | Set by the data action |
-| `ticketFailed` | True/False | No | `False` | Set by the data action |
+| `ticketCreated` | True/False | No | `False` | Set by the If step on the outcome |
+| `ticketFailed` | True/False | No | `False` | Set by the If step on the outcome |
 | `ticketReturnCode` | Number | No | `99` | 99 = not yet called |
 | `ticketNumber` | String | No | | Data action output |
 | `ticketMessage` | String | No | | Data action output, human readable |
@@ -71,20 +72,21 @@ Vertical stack (page)
 │   └─ Horizontal stack
 │       └─ Button  "Create ticket"   Click Action = custom action "Create Ticket"   Disabled = isSubmitting
 ├─ Vertical stack  "Pending"                       Visible = showPending      background: amber tint
-│   ├─ Markdown   **Creating ticket…**  Sending to the ticketing system. This usually takes a few seconds.
-│   └─ Button  "Cancel and try again"   Click Action = custom action "Reset Ticket Form"
+│   ├─ Read-only text  "Creating ticket…"  bold, then "Sending to the ticketing system. This usually takes a few seconds."
+│   └─ Button  "Cancel and try again"   Click Action = custom action "Cancel Ticket"
 ├─ Vertical stack  "Created"                       Visible = ticketCreated    background: green tint
-│   ├─ Markdown   **Ticket created**
+│   ├─ Read-only text  "Ticket created"  bold
 │   ├─ Read-only text  {{ticketNumber}}            large, monospace if available
 │   ├─ Read-only text  "Logged to Chat Logs. Give the customer the number and the expected response time."
 │   └─ Button  "Create another ticket"  Click Action = "Reset Ticket Form"
 ├─ Vertical stack  "Failed"                        Visible = ticketFailed     background: red tint
-│   ├─ Markdown   **Ticket not created**
+│   ├─ Read-only text  "Ticket not created"  bold
 │   ├─ Read-only text  {{ticketMessage}}
 │   ├─ Read-only text  "Fix the issue and submit again. The failed attempt has been logged."
 │   └─ Button  "Back to form"   Click Action = "Reset Ticket Form"
 └─ Vertical stack  "Timed out"                     Visible = showTimeoutError background: red tint
-    └─ Markdown   **No reply from the ticketing system.** Try again. If it keeps happening, raise it with the service desk and create the ticket manually.
+    ├─ Read-only text  "No reply from the ticketing system"  bold, then "Try again. If it keeps happening, raise it with the service desk and create the ticket manually."
+    └─ Button  "Back to form"   Click Action = "Reset Ticket Form"
 ```
 
 ## 4. Property bindings, exactly
@@ -94,8 +96,8 @@ Vertical stack (page)
 * **Disabled** (Advanced group): bind the True/False variable `isSubmitting`. True disables.
 * **Click Action** on buttons: *Custom actions > Create Ticket* / *Reset Ticket Form*.
 * **Requires Value = True** on the description input shows the required marker. It does
-  not block the button on its own, which is why the action also checks the value
-  (see `02-create-ticket-action.md`).
+  not block the button on its own, which is why the Create Ticket action starts with an
+  If step on the value (see `02-create-ticket-action.md`).
 * **Change Action** (Advanced group) on the description input is optional: point it at a
   tiny custom action that sets `showTimeoutError = False` and `ticketFailed = False`, so
   old error panels disappear as soon as the agent starts editing.
