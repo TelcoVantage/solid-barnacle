@@ -12,6 +12,7 @@ Submit button. The deliverable is a `.script` file that imports through the admi
 | `docs/01-page-build.md` | What is on the page and how each component is bound. Use it when editing the script in the editor. |
 | `docs/02-create-ticket-action.md` | The three custom actions step by step. |
 | `docs/03-flow-and-queue-wiring.md` | Architect inbound message flow, participant data keys, queue assignment, Messenger. |
+| `docs/04-missed-message-visibility.md` | Native options for surfacing customer messages the agent has not answered: desktop settings, alert rules, and a Trigger + Workflow watchdog. |
 | `data-actions/` | Input/output contracts and response template for the two data actions. |
 
 ## Import in three steps
