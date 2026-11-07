@@ -1,0 +1,222 @@
+<title>Chat Ticket Script</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: an agent-desk column (the modernised script page as the agent sees it) beside a narrow notes rail that explains each block. Stacks on phones. */
+:root{
+  --bg:#f3f5f8; --surface:#ffffff; --fg:#1b2430; --muted:#5b6778; --line:#d9dfe7;
+  --accent:#1f5fbf; --accent-fg:#ffffff; --soft:#e8f0fc;
+  --ok:#1d7a4a; --ok-bg:#e4f4ea; --warn:#8a5a00; --warn-bg:#fff4d6; --bad:#b3261e; --bad-bg:#fbe9e7;
+  --font:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#141a22; --surface:#1d2531; --fg:#e8edf3; --muted:#9aa7b8; --line:#303a48;
+  --accent:#6ea2f0; --accent-fg:#0d1626; --soft:#22304a;
+  --ok:#6fd39a; --ok-bg:#163525; --warn:#f0c667; --warn-bg:#3a2e10; --bad:#ff8a80; --bad-bg:#3f1d1a; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#141a22; --surface:#1d2531; --fg:#e8edf3; --muted:#9aa7b8; --line:#303a48;
+  --accent:#6ea2f0; --accent-fg:#0d1626; --soft:#22304a;
+  --ok:#6fd39a; --ok-bg:#163525; --warn:#f0c667; --warn-bg:#3a2e10; --bad:#ff8a80; --bad-bg:#3f1d1a; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.5 var(--font);margin:0;
+  padding-block:28px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{text-wrap:balance;margin:0}
+h1{font-size:1.6rem;font-weight:600}
+.lead{color:var(--muted);max-width:68ch;margin:6px 0 0}
+.wrap{max-width:1180px;margin:0 auto}
+.eyebrow{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.cols{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:28px;margin-top:28px;align-items:start}
+@media (max-width:860px){.cols{grid-template-columns:1fr}}
+.cols>*{min-width:0}
+
+/* The script page as rendered in the agent desktop */
+.desk{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.desk-bar{display:flex;align-items:center;gap:10px;padding:10px 16px;border-bottom:1px solid var(--line);font-size:.8rem;color:var(--muted)}
+.desk-bar .dot{width:10px;height:10px;border-radius:50%;background:var(--line)}
+.page{padding:20px;display:grid;gap:18px}
+.banner{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between;background:var(--soft);border-radius:8px;padding:12px 16px}
+.banner strong{font-size:1.05rem;font-weight:600}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font-size:.75rem;font-weight:500;padding:3px 10px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--muted)}
+.card{border:1px solid var(--line);border-radius:8px;padding:16px;display:grid;gap:12px}
+.card h3{font-size:.95rem;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.card h3 span{font-size:.72rem;font-weight:500;color:var(--muted);font-family:var(--mono)}
+.kv{display:grid;grid-template-columns:120px minmax(0,1fr);gap:8px 14px;font-size:.92rem}
+.kv dt{color:var(--muted)}
+.kv dd{margin:0;font-weight:500;overflow-wrap:anywhere}
+.kv dd.copy{display:flex;gap:8px;align-items:center}
+.copybtn{font:inherit;font-size:.72rem;padding:2px 8px;border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:6px;cursor:pointer}
+.copybtn:focus-visible,.btn:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:520px){.row{grid-template-columns:1fr}}
+label{display:grid;gap:4px;font-size:.82rem;color:var(--muted)}
+label b{font-weight:500;color:var(--fg)}
+select,textarea{font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:8px 10px;width:100%}
+textarea{min-height:96px;resize:vertical}
+.hint{font-size:.76rem;color:var(--muted);display:flex;justify-content:space-between}
+.actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.btn{font:inherit;font-weight:600;padding:9px 18px;border-radius:6px;border:1px solid transparent;cursor:pointer}
+.btn.primary{background:var(--accent);color:var(--accent-fg)}
+.btn.primary[disabled]{opacity:.45;cursor:not-allowed}
+.btn.ghost{background:transparent;color:var(--accent);border-color:var(--line)}
+.state{border-radius:8px;padding:12px 14px;display:grid;gap:4px;font-size:.92rem}
+.state .t{font-weight:600}
+.state.pending{background:var(--warn-bg);color:var(--warn)}
+.state.ok{background:var(--ok-bg);color:var(--ok)}
+.state.bad{background:var(--bad-bg);color:var(--bad)}
+.state .num{font-family:var(--mono);font-size:1.15rem;letter-spacing:.02em}
+.demo{display:flex;gap:6px;flex-wrap:wrap;padding:12px 20px;border-top:1px solid var(--line);font-size:.78rem;color:var(--muted);align-items:center}
+.demo button{font:inherit;font-size:.76rem;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+.demo button[aria-pressed="true"]{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+
+/* Notes rail */
+.rail{display:grid;gap:14px}
+.note{border-left:3px solid var(--accent);padding:2px 0 2px 14px;font-size:.9rem}
+.note b{display:block;font-weight:600}
+.note code,.steps code{font-family:var(--mono);font-size:.82em;background:var(--soft);padding:1px 5px;border-radius:4px}
+.before{margin-top:34px;border-top:1px solid var(--line);padding-top:22px}
+.before .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:12px}
+.before .cell{border:1px solid var(--line);border-radius:8px;padding:12px 14px;font-size:.88rem;background:var(--surface)}
+.before .cell b{display:block;font-weight:600;margin-bottom:4px}
+.steps{margin-top:34px;border-top:1px solid var(--line);padding-top:22px}
+.steps ol{margin:12px 0 0;padding-left:22px;display:grid;gap:8px;max-width:72ch}
+.steps li b{font-weight:600}
+.indent{margin-left:18px;color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){.state{transition:opacity .2s}}
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">Genesys Cloud · Script Editor · Message channel</div>
+  <h1>Chat Ticket Script</h1>
+  <p class="lead">The modernised agent page, shown the way it renders in the agent desktop. Use the state buttons under the page to see what the agent sees before, during and after a ticket is created. The right-hand notes name the exact component and property for each block.</p>
+
+  <div class="cols">
+    <div class="desk" aria-label="Mockup of the modernised script page">
+      <div class="desk-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span>Interaction · Message · Script: Chat Ticket v2</span></div>
+      <div class="page">
+        <div class="banner">
+          <div><div class="eyebrow">Customer</div><strong id="m-name">Amira Haddad</strong></div>
+          <div class="chips"><span class="chip">Web Messaging</span><span class="chip">Queue · Support L1</span><span class="chip">Lang · en-GB</span></div>
+        </div>
+
+        <div class="card">
+          <h3>Customer details <span>{{fullname}} {{email}} {{location}}</span></h3>
+          <dl class="kv">
+            <dt>Full name</dt><dd>Amira Haddad</dd>
+            <dt>Email</dt><dd class="copy"><span id="m-email">amira.haddad@example.com</span><button class="copybtn" id="copy-email" type="button">Copy</button></dd>
+            <dt>Location</dt><dd>Manchester, UK</dd>
+            <dt>Interaction</dt><dd class="copy"><span id="m-int" style="font-family:var(--mono);font-size:.82rem">9c4e1b0a-7f2d-4e63-a1c9-0b8e52d7f311</span><button class="copybtn" id="copy-int" type="button">Copy</button></dd>
+          </dl>
+        </div>
+
+        <div class="card" id="blk-form">
+          <h3>Create ticket <span>Visible = showForm</span></h3>
+          <div class="row">
+            <label><b>Category</b><select id="f-cat"><option>Billing</option><option selected>Technical fault</option><option>Account</option><option>Other</option></select></label>
+            <label><b>Priority</b><select id="f-pri"><option>Low</option><option selected>Normal</option><option>High</option></select></label>
+          </div>
+          <label><b>Description</b><textarea id="f-desc" placeholder="What the customer reported, what you checked, what they need next.">Broadband dropping every evening since 3 Nov. Router restarted twice, line test clean. Customer asks for an engineer visit.</textarea></label>
+          <div class="hint"><span>Required. Shown to the ticket owner as the opening note.</span><span id="count">147 / 2000</span></div>
+          <div class="actions">
+            <button class="btn primary" id="submit" type="button">Create ticket</button>
+            <span class="hint" id="submit-hint">Disabled = isSubmitting</span>
+          </div>
+        </div>
+
+        <div class="state pending" id="blk-pending" hidden>
+          <div class="t">Creating ticket…</div>
+          <div>Sending to the ticketing system. This usually takes a few seconds.</div>
+          <div class="actions" style="margin-top:6px"><button class="btn ghost" id="cancel" type="button">Cancel and try again</button></div>
+        </div>
+
+        <div class="state ok" id="blk-ok" hidden>
+          <div class="t">Ticket created</div>
+          <div class="num">TKT-2026-048113</div>
+          <div>Logged to Chat Logs. Tell the customer the number and expected response time.</div>
+          <div class="actions" style="margin-top:6px"><button class="btn ghost" id="another" type="button">Create another ticket</button></div>
+        </div>
+
+        <div class="state bad" id="blk-bad" hidden>
+          <div class="t">Ticket not created</div>
+          <div id="bad-msg">Ticketing system said: customer account 48113 is on hold (return code 12).</div>
+          <div>Fix the issue and submit again. The failed attempt has been logged.</div>
+          <div class="actions" style="margin-top:6px"><button class="btn ghost" id="retry" type="button">Back to form</button></div>
+        </div>
+      </div>
+      <div class="demo">Preview state:
+        <button type="button" data-state="form" aria-pressed="true">Form</button>
+        <button type="button" data-state="pending">Submitting</button>
+        <button type="button" data-state="ok">Created</button>
+        <button type="button" data-state="bad">Failed</button>
+      </div>
+    </div>
+
+    <aside class="rail" aria-label="Build notes">
+      <div class="note"><b>Customer banner</b>Horizontal stack container. Read-only text bound to <code>{{fullname}}</code>, plus chips for <code>{{Scripter.Media Type}}</code> and queue. Replaces the loose “Fullname: / Email: / Location:” rows.</div>
+      <div class="note"><b>Customer details card</b>Vertical stack with two-column pairs. Values are read-only text. Email and interaction ID get a <code>Scripter.Copy to Clipboard</code> button so agents stop retyping them into the ticket.</div>
+      <div class="note"><b>Create ticket card</b>Two Dropdowns (<code>ticketCategory</code>, <code>ticketPriority</code>) and one Text input with Multiline = Yes and Requires Value = True, bound to <code>ticketDescription</code>. Container Visible is bound to the <code>showForm</code> variable.</div>
+      <div class="note"><b>Submit button</b>Click Action runs the custom action “Create Ticket”. Disabled is bound to <code>isSubmitting</code>, so a double-click can’t create two tickets.</div>
+      <div class="note"><b>Three state panels</b>Markdown components, each in its own container with Visible bound to <code>showPending</code>, <code>ticketCreated</code> or <code>ticketFailed</code>. Only one is ever on screen, and the agent is never left staring at a blank <code>{{ticketStatus}}</code>.</div>
+      <div class="note"><b>Ticket number</b>Comes from the data action output <code>ticketNumber</code>. The current page prints <code>{{InteractionId}}</code>, which is the output variable name, not a ticket number; rename it so the log table and the page agree.</div>
+      <div class="note"><b>Failure path</b>The Create Ticket data action returns <code>ticketFailed</code> and <code>ticketMessage</code> alongside the return code, so a logical failure shows up without the script needing an if/else it doesn’t have. A hung request is covered by the Cancel button, which runs the “Reset Ticket Form” action.</div>
+    </aside>
+  </div>
+
+  <section class="before">
+    <div class="eyebrow">What changes from the current page</div>
+    <div class="grid">
+      <div class="cell"><b>Now: labels and raw placeholders</b>Fullname / Email / Location laid out as free text with <code>{{fullname}}</code> values. No channel or queue context.</div>
+      <div class="cell"><b>After: banner and details card</b>Customer identity at the top, copyable fields, media type and queue visible at a glance.</div>
+      <div class="cell"><b>Now: one textarea and a Submit</b>Nothing stops an empty submit or a double submit; no category or priority is captured.</div>
+      <div class="cell"><b>After: validated form</b>Category and priority dropdowns, required multiline description, Submit disabled while a request is in flight.</div>
+      <div class="cell"><b>Now: {{ticketStatus}} text</b>Blank until the return code is 0. A failed or slow call looks identical to “nothing happened”.</div>
+      <div class="cell"><b>After: pending, created, failed panels</b>Each outcome has its own panel and next step for the agent. Failures are logged to Chat Logs too, not only successes.</div>
+    </div>
+  </section>
+
+  <section class="steps">
+    <div class="eyebrow">Custom action · Create Ticket (redesigned)</div>
+    <ol>
+      <li><b>Set Variable</b> · <code>isSubmitting = true</code>, <code>showPending = true</code>, <code>ticketCreated = false</code>, <code>ticketFailed = false</code>, <code>ticketDone = false</code>.</li>
+      <li><b>Data Actions.Execute Data Action</b> · Create Ticket (v9). Inputs: fullname, email, location, ticketCategory, ticketPriority, ticketDescription, Scripter.Interaction ID. Outputs: ticketDone, ticketReturnCode, ticketNumber, ticketMessage, ticketCreated, ticketFailed, ticketOutcome.</li>
+      <li><b>Wait Until</b> <code>ticketDone</code> Equals <code>true</code>
+        <div class="indent">3a. <b>Execute Data Action</b> · Insert Data Table Row (Chat Logs) with interaction ID, agent ID, ticketNumber, ticketOutcome, ticketReturnCode, ticketMessage, category, priority. Runs for success and for failure.</div>
+        <div class="indent">3b. <b>Set Variable</b> · <code>showPending = false</code>, <code>isSubmitting = false</code>, <code>showForm = false</code>. The panels then show themselves from <code>ticketCreated</code> / <code>ticketFailed</code>.</div>
+      </li>
+    </ol>
+    <p class="lead" style="margin-top:12px">Waiting on <code>ticketDone</code> rather than on <code>ticketReturnCode = 0</code> is the key change: a non-zero return code no longer leaves the action waiting forever and the agent with no feedback.</p>
+  </section>
+</div>
+
+<script>
+(function(){
+  var blocks={form:'blk-form',pending:'blk-pending',ok:'blk-ok',bad:'blk-bad'};
+  var btns=document.querySelectorAll('.demo button');
+  function show(state){
+    Object.keys(blocks).forEach(function(k){document.getElementById(blocks[k]).hidden=(k!==state);});
+    document.getElementById('submit').disabled=(state==='pending');
+    btns.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.state===state));});
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.state);});});
+  document.getElementById('submit').addEventListener('click',function(){
+    var d=document.getElementById('f-desc');
+    if(!d.value.trim()){d.focus();return;}
+    show('pending');setTimeout(function(){show('ok');},1200);
+  });
+  document.getElementById('cancel').addEventListener('click',function(){show('form');});
+  document.getElementById('another').addEventListener('click',function(){show('form');});
+  document.getElementById('retry').addEventListener('click',function(){show('form');});
+  var desc=document.getElementById('f-desc'),count=document.getElementById('count');
+  function upd(){count.textContent=desc.value.length+' / 2000';}
+  desc.addEventListener('input',upd);upd();
+  function copier(btn,src){document.getElementById(btn).addEventListener('click',function(){
+    var el=document.getElementById(src),t=el.textContent,b=this;
+    function done(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy';},1200);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){sel(el);});}else{sel(el);}
+  });}
+  function sel(el){var r=document.createRange();r.selectNodeContents(el);var s=window.getSelection();s.removeAllRanges();s.addRange(r);}
+  copier('copy-email','m-email');copier('copy-int','m-int');
+  show('form');
+})();
+</script>
